@@ -5,41 +5,109 @@
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap CSS (NODE_MODULES) -->
+    <!-- build:css css/main.css -->
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+    <!-- Bootstrap CSS (USING CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700&display=swap" rel="stylesheet">
     <!-- endbuild -->
 
-    <title>Huat Zai Ya Theatres</title>
+    <title>SG Money Lender</title>
 </head>
 
 <body>
+    <!-- Modal -->
+    <!-- Modal opens via clicking 4th carousel slide -->
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="promoModalLabel">Don't miss out on our
+                        exclusive deal!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: #F3F7F9; overflow: auto;">
+                    <div style="display:flex; justify-content: center; align-items: center;">
+                        <img src="assets/poster.png">
+                    </div>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- MAIN BODY CONTAINER -->
     <div id="container">
-
-        <!-- ! custom make own navbar -->
-        <nav id="header" class="">
-            <!-- ! LOGO -->
-            <div class="">
+        <nav id="header" class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <div class="container-fluid">
                 <img src="./assets/new_logo_resized.png" style="padding-bottom: 10px;"
                     onclick="window.location.href='index.html'">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div style="float: right;  margin-top: 5px;">
-                    nav bar buttons
-                </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="clear: both;">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
 
-                <button style="height:40px; background: linear-gradient( #C4B480, #dac992, #ebf8e1); border: none; border-radius:
-                    5px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                    <b>COMING SOON</b>
-                </button>
-                <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                    TWe offer one of the lowest rates available in Singapore. Trust us to help you overcome your
-                    difficultiesWe offer one of the lowest rates available in Singapore. Trust us to help you overcome
-                    your difficultiesWe offer one of the lowest rates available in Singapore. Trust us to help you
-                    overcome your difficultiesWe offer one of the lowest rates available in Singapore. Trust us to help
-                    you overcome your difficulties
-                </p>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Loans
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="personal-loan.html">Personal</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Business</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Foreigner</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Education</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Medical</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Wedding</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Vacation</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Renovation</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Payday</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact-us.html">Contact Us</a>
+                            </li>
+
+                        </ul>
+                        <button class="button-navbar" onclick="window.location.href='./apply-now.html'"
+                            style="margin-left: 30px;">APPLY NOW
+                        </button>
+
+                    </div>
+                </div>
             </div>
         </nav>
 
@@ -47,7 +115,86 @@
 
             <!-- carousel component -->
             <div id="carousel-container">
+                <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
 
+                        <!-- SLIDE 1 CONTENT -->
+                        <div class="carousel-item active">
+                            <img src="./Image/homepg_vacation.jpg" class="d-block w-100" alt="vacation">
+                            <div class="carousel-caption carousel-caption-override" style="bottom: 20%;">
+                                <div class="carousel-caption-text">Want to travel to the Maldives?<br>We can help!</div>
+                                <button type="button" class="btn carousel-caption-button"
+                                    onclick="window.location.href='./personal-loan.html'">FIND OUT MORE</button>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 CONTENT  -->
+                        <div class="carousel-item">
+                            <img src="./Image/homepg_wedding.jpeg" class="d-block w-100" alt="wedding">
+                            <div class="carousel-caption carousel-caption-override">
+                                <div class="carousel-caption-text">Great plans for a grand wedding?<br>We
+                                    can help!</div>
+                                <button type="button" class="btn carousel-caption-button"
+                                    onclick="window.location.href='./personal-loan.html'">FIND OUT MORE</button>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 CONTENT -->
+                        <div class="carousel-item">
+                            <img src="./Image/homepg_graduation.jpg" class="d-block w-100" alt="graduation">
+                            <div class="carousel-caption carousel-caption-override">
+                                <div class="carousel-caption-text">Wish to further your studies?<br>We
+                                    can help!</div>
+                                <button type="button" class="btn carousel-caption-button"
+                                    onclick="window.location.href='./personal-loan.html'">FIND OUT MORE</button>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4 CONTENT -->
+                        <div class="carousel-item" style="background-color: #258985; padding: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#promoModal">
+                            <div style="margin-left: 10%;">
+                                <img src=" ./assets/poster.png" alt="promo" style="position: relative; ">
+                                <div class="carousel-caption-text"
+                                    style="text-align: center; display: inline-block; margin-left: 50px; vertical-align: middle;">
+                                    Don't miss our
+                                    exclusive promotions!
+                                    <div
+                                        style="color:#d8dcdc; font-size: 60px; line-height: 60px; margin-top: 30px; margin-bottom: 30px; text-shadow: 3px 3px 1px dimgray;">
+                                        0%<br>INTEREST
+                                        RATE<br></div> as a
+                                    welcome to our
+                                    newest customers!<br><br>
+
+                                    <div style="color:#d8dcdc; font-size: 18px; text-shadow: 1px 2px 1px dimgray;">
+                                        Already with us? Invite your friends using your referral code to earn credits!
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class=" carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
 
                 <!-- Why Us content -->
                 <div id="why-us-container">
