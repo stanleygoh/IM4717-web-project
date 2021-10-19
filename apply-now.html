@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Bootstrap CSS (NODE_MODULES) -->
+    <!-- build:css css/main.css -->
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+    <!-- Bootstrap CSS (USING CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;700&display=swap" rel="stylesheet">
+    <!-- endbuild -->
+
+    <title>SG Money Lender</title>
+</head>
+
+<body onload="myFunction()">
+    <script>
+        function myFunction() {
+            loan = localStorage.getItem("loan");
+            amount = localStorage.getItem("amount");
+            for (var i = 0; i < document.getElementById("loanId").length; i++) {
+                if (document.getElementById("loanId").options[i].value == loan) {
+                    document.getElementById("loanId").selectedIndex = i;
+                }
+            }
+            for (var i = 0; i < document.getElementById("loanamount").length; i++) {
+                if (document.getElementById("loanamount").options[i].value == amount) {
+                    document.getElementById("loanamount").selectedIndex = i;
+                }
+            }
+            localStorage.clear();
+
+        }
+    </script>
+    <div id="container">
+        <nav id="header" class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <div class="container-fluid">
+                <img src="./assets/new_logo_resized.png" style="padding-bottom: 10px;"
+                    onclick="window.location.href='index.html'">
+                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div style="float: right; margin-top: 5px;">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="clear: both;">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Loans
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="personal-loan.html">Personal</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Business</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Foreigner</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Education</a></li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Medical</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Wedding</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Vacation</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Renovation</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="personal-loan.html">Payday</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact-us.html">Contact Us</a>
+                            </li>
+
+                        </ul>
+                        <button class="button-navbar" onclick="window.location.href='./apply-now.html'"
+                            style="margin-left: 30px;">APPLY NOW
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="content" style="padding:20px 20px 50px 20px;">
+            <center class="header-1">Apply for a loan</center>
+            <center class="header-1-caption" style="padding-bottom: 50px;"><br>Fill up the form and we will contact with
+                you shortly
+            </center>
+            <center>
+                <div style="position:relative;width:800px;height:900px">
+                    <canvas id="myCanvas" width="700" height="900"
+                        style="border:1px solid #000000; background-color: white;box-shadow: 5px 10px#aaaaaa;"></canvas>
+                    <form action="confirmation.html">
+                        <p class="required-field" style="position:absolute;left:71px;top:50px;width:300px;height:30px;">
+                            Enter your Name (as per NRIC)
+                        </p>
+                        <input type="text"
+                            style="position:absolute;left:100px;top:80px;width:600px;padding: 1px 2px 1px 2px; border-color: #767676;"
+                            class="
+                            form-control" id="name" required>
+                        <p class="required-field"
+                            style="position:absolute;left:67px;top: 130px;width:400px;height: 30px;">Enter your Contact
+                            Number (eg. 91234567)
+                        </p>
+                        <input type="tel" style="position:absolute;left:100px;top:160px;width:600px;" id="contactno"
+                            pattern="[6,8,9]{1}[0-9]{7}" required>
+                        <p style="position:absolute;left:1px; top:210px;width:300px;height: 30px;">Type of Loan</p>
+                        <select id="loanId" name="loan"
+                            style="position:absolute;left:100px;top:240px;width:600px;height: 30px;">
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Foreigner Loan">Foreigner Loan</option>
+                            <option value="Education Loan">Education Loan</option>
+                            <option value="Medical Loan">Medical Loan</option>
+                            <option value="Wedding Loan">Wedding Loan</option>
+                            <option value="Vacation Loan">Vacation Loan</option>
+                            <option value="Renovation Packages">Renovation Packages</option>
+                            <option value="Payday Loan">Payday Loan</option>
+                        </select>
+                        <p class="required-field"
+                            style="position:absolute;left:59px;top:290px;width:300px;height: 30px;">Enter your Monthly
+                            Income
+                        </p>
+                        <input type="number" style="position:absolute;left:100px;top:320px;width:600px;" id="income"
+                            required>
+                        <p style="position:absolute;left:5px;top: 370px;width:300px;height: 30px;">Loan Amount</p>
+                        <select id="loanamount" name="amount"
+                            style="position:absolute;left:100px;top:400px;width:600px;height: 30px;">
+                            <option value="Below 30,000">Below 30,000</option>
+                            <option value="30,000 to 60,000">30,000 to 60,000</option>
+                            <option value="60,000 and above">60,000 and above</option>
+                        </select>
+                        <p style="position:absolute;left:97px;top:450px;width:300px;height: 30px;">Enter your Referral
+                            Code (eg. JET0021)</p>
+                        <input type="text"
+                            style="position:absolute;left:100px;top:480px;width:600px;padding: 1px 2px 1px 2px; border-color: #767676"
+                            class="
+                            form-control" id="referralcode">
+                        <p style="position:absolute;left:30px;top:530px;width:300px;height: 30px;">Enter your Messages
+                        </p>
+                        <textarea class="form-control"
+                            style="position:absolute;left:100px;top:560px;width:600px;height: 150px;padding: 1px 2px 1px 2px; border-color: #767676"
+                            id="txtbox" rows="3"></textarea>
+                        <br>
+                        <input type="submit" style="position:absolute;left:300px;top:730px;width:200px;"
+                            class="para-button" id="submitBtn1" onclick='applicationDetails.js'>
+                        <script type="text/javascript" src="./js/applicationDetails.js"></script>
+                    </form>
+                </div>
+            </center>
+
+        </div>
+
+        <footer id="footer">
+            <paragraph class="para">© 2021 SG MoneyLender Pte. Ltd. All Rights
+                Reserved.
+            </paragraph>
+        </footer>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+    <!-- USING CDN INSTEAD OF NODE_MODULES -->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <!-- endbuild -->
+</body>
+
+</html>

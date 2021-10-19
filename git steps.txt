@@ -1,0 +1,22 @@
+this is just a text file
+/////////////////////////////
+
+before working:
+git fetch --all
+THEN
+git pull origin <insert specified branch>
+
+
+when u wanna upload:
+git add .
+git commit -m "ENTER YOUR COMMIT MESSAGE HERE"      e.g. (added styling for header)
+git push     (if this doesnt work, use git push origin <branch> e.g. git push origin main)
+
+
+other useful commands:
+git branch  (check which branch you are in)
+git log --oneline   (check past commits)
+git remote -v (check if configured properly)
+git checkout -b "new-branch-name-here"         (create new branch. you can create your own branch to play play. * this will clone the current branch you are in to the new one)
+git checkout <branch-name>    (switch to that branch, e.g. git checkout main   OR   git checkout dev)
+git checkout <commit-id>    (Switch to that commit. try not to use this, i scared)
