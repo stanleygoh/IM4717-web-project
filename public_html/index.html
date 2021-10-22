@@ -17,26 +17,29 @@
     <div id="container">
 
         <!-- ! custom make own navbar -->
-        <nav id="header">
-            <ul class="top-navbar">
-                <div class="navbar-links">
-                    <li><button class="cta-button" href="now-showing.html">NOW SHOWING</button></li>
-                    <li><a href="coming-soon.html">COMING SOON</a></li>
-                    <li><a href="promotions.html">PROMOTIONS</a></li>
-                    <li><a href="index.html">HOME</a></li>
-                </div>
-                <img class="logo-img" src="./assets/new_logo_resized.png" onclick="window.location.href='index.html'">
-            </ul>
-        </nav>
+        <div id="header">
+            <div id="navbar">
+                <ul class="top-navbar">
+                    <div class="navbar-links">
+                        <li><button class="cta-button" href="now-showing.html">NOW SHOWING</button></li>
+                        <li><a href="coming-soon.html">COMING SOON</a></li>
+                        <li><a href="promotions.html">PROMOTIONS</a></li>
+                        <li><a href="index.html">HOME</a></li>
+                    </div>
+                    <img class="logo-img" src="./assets/new_logo_resized.png"
+                        onclick="window.location.href='index.html'">
+                </ul>
 
-        <!-- Red Search bar Section -->
-        <div id="search-bar-section">
-            <div id="search-bar">
-                <center><b>FOR JACK</b></center>
+
             </div>
 
+            <!-- Red Search bar Section -->
+            <div id="search-bar-section">
+                <div id="search-bar">
+                    <center><b>FOR JACK</b></center>
+                </div>
+            </div>
         </div>
-
         <!-- Carousel Section -->
         <div id="carousel-section" style="padding:  0;">
             <!-- carousel component -->
@@ -78,6 +81,35 @@
             <h1>
                 NOW SHOWING
             </h1>
+
+            <br>
+
+            <div class="movie-gallery">
+                <!-- <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="./assets/award2.png" alt="Avatar">
+                    </div>
+                    <div class="movie-card-details">
+                        <p>Title: </p>
+                        <p>Genre: </p>
+                        <p>Duration: </p>
+                        <p>Showtime: </p>
+                    </div>
+                </div> -->
+
+                <hr>
+
+
+                <div class="movie-card">
+                    <img src="./assets/award1.png" alt="Avatar" class="movie-card-poster" style="width:100%">
+                    <div class="movie-card-details">
+                        <p>Title: </p>
+                        <p>Genre: </p>
+                        <p>Duration: </p>
+                        <p>Showtime: </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer id="footer">
             <paragraph class="para">© 2021 SG MoneyLender Pte. Ltd. All Rights
@@ -89,12 +121,6 @@
     <!-- USING CDN INSTEAD OF NODE_MODULES -->
     <script src="js/scripts.js"></script>
 
-    <script>
-        var showModal = new bootstrap.Modal(document.getElementById('promoModal'), {})
-        setTimeout(function () {
-            showModal.show()
-        }, 1000);
-    </script>
     <!-- endbuild -->
 </body>
 

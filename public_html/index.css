@@ -8,11 +8,11 @@
     background-color: #101F2F;
 }
 
-#header {
+#navbar {
     width: 80%;
     height: 100px;
     margin: 0 auto;
-    border: solid white;
+    padding: 0;
 }
 
 .top-navbar {
@@ -59,12 +59,22 @@
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    border: solid white;
+}
+
+#header {
+    background-color: #101f2f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 0;
+    margin: 0;
 }
 
 
 /** CAROUSEL  */
 #carousel-section {
+    margin-top: 200px;
     background-color: #101f2f;
     min-height: 200px;
     padding: 20px;
@@ -194,10 +204,9 @@
 
 #now-showing-section {
     margin: 0 10%;
-    padding-top: 20px;
-
+    padding: 20px 0;
+    border: solid white;
     color: #C4B480;
-    border: none;
     min-height: 50px;
     font-family: 'Franklin Gothic Medium',
         'Arial Narrow',
@@ -228,4 +237,82 @@
         sans-serif;
     font-weight: bold;
 
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* .movie-card {
+    position: relative;
+    background-color: transparent;
+    width: 200px;
+    height: 240px;
+    border: 1px solid #f1f1f1;
+}
+
+.movie-card-details {
+    display: none;
+    background-color: rgba(44, 44, 44, 0.8);
+    width: 200px;
+    height: 240px;
+
+}
+
+.movie-card-poster {
+    background-color: transparent;
+    display: block;
+    width: 200px;
+    height: 240px;
+}
+
+.movie-card-poster img {
+    width: 200px;
+    height: 240px;
+}
+
+.movie-card-details,
+.movie-card-poster {
+    position: absolute;
+}
+
+.movie-card-poster:hover+.movie-card-details {
+    display: block;
+} */
+
+
+.movie-card {
+    position: relative;
+    background-color: transparent;
+    width: 200px;
+    height: 240px;
+    border: solid white 1px;
+}
+
+
+
+.movie-card-poster {
+    opacity: 1;
+    display: block;
+    /* width: 100%; */
+    width: 200px;
+    height: 240px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.movie-card-details {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: end;
+}
+
+.movie-card:hover .movie-card-poster {
+    opacity: 0.1;
+}
+
+.movie-card:hover .movie-card-details {
+    opacity: 1;
 }
