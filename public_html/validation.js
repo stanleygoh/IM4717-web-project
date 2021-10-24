@@ -7,17 +7,15 @@ movie.addEventListener("change", disablegenre, false);
 genre.addEventListener("change", disablemovie, false);
 
 
-function chkDate(event) { //Try to add today date in SINI
+function chkDate(event) {
     var myDate = event.currentTarget;
-    var selectDate = new Date(myDate.value)
     var todayDate = new Date();
-    if (selectDate <= todayDate) {
+    var date = todayDate.getFullYear()+'-'+(todayDate.getMonth()+1)+'-'+todayDate.getDate();
+    if ( date > myDate.value) {
         pos = 1;
     } else {
         pos = 0;
     }
-
-
     if (pos != 0) {
         alert("The date you entered (" + myDate.value +
             ") is invalid! \n" +
