@@ -103,6 +103,7 @@
         $avail1[] = $row["availability"];
     }}
     ?>
+<form method="post">
 <div class="grid-container" style="margin-bottom: 50px;">
   <div class="item1">Screen</div>
   <div class="grid-item"style="visibility: hidden;">2</div>
@@ -231,17 +232,26 @@ if($avail1[14] == 1){
   <div class="grid-item"style="visibility: hidden;">6</div>  
   <div class="grid-item"style="visibility: hidden;">7</div>
   <div class="item2">Entrance</div>
-  <div class="item3">EXIT</div> 
+  <div class="item3">Exit</div> 
             
 </div>
 <div>
-You have selected : <strong><p id='seatid'style="display:inline"></p></strong>
+You have selected : <strong><p name='seatid' id='seatid'style="display:inline"></p></strong>
 <script type = "text/javascript"  src = "seatselect.js" ></script> 
 <span style="float:right;">
 Total Cost : $<strong><p id='totalcost'style="display:inline">0</p></strong>
 </span>
 </div>
 <button type="button" onClick="onClickReset()">Reset</button>
+<input type="submit" value="Add to Cart" name="submit"style="float:right;"></button><br>
+<?php
+     if(isset($_POST['submit'])){
+      $seat= $_POST['seatid'];
+      echo $seat[0];
+      echo"sss";
+     }
+?>
+</form>
 
 </body>
 </html>
