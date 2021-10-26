@@ -77,7 +77,9 @@
     echo "<h2>Movie Title: ".$movie2[0]."</h2>";
     echo "<h2>Threatre ".$threater[0]."</h2>";
     echo "<h2>Date: ".$date1[0]."</h2>";
-    echo "<h2>Time: ".$time1[1]."</h2>";
+    $time5 = new DateTime($time);
+    $time6 = $time5->format('H.i');
+    echo "<h2>Time: ".$time6."</h2>";
     $a=0;
     $seat[] = array();
     }
@@ -87,7 +89,14 @@
         exit;
     }
     $avail1 = array();
-    $avail = "select availability from Threater where theatreID =".$threater[0].";";
+    $avail2 = array();
+    $date3 = array();
+    $time3 = array();
+    $date7 = new DateTime($date);
+    $date = $date7->format('Y-m-d');
+    $time7 = new DateTime($time);
+    $time = $time7->format('H:i:s');
+    $avail = "select availability from Threater where theatreID =".$threater[0]." and theatreDate = '".$date."' and theatreTime ='".$time."';";
     $avail = $db->query($avail);
     if ($avail ->num_rows >0){
     while ($row = $avail->fetch_assoc()){
@@ -118,17 +127,17 @@
   <div class="grid-item"style="visibility: hidden;">5</div>
   <div class="grid-item"style="visibility: hidden;">6</div>  
   <?php if($avail1[0] == 1){
-      echo '<div class="grid-item" id="A1" >A1(Res)</div>';
+      echo '<div class="grid-item" id="A1" style="background-color:red" >A1</div>';
   }else{
     echo '<div class="grid-item" id="A1" onclick="selectA1()">A1</div>';
   }
   if($avail1[1] == 1){
-    echo '<div class="grid-item" id="A2" >A2(Res)</div>';
+    echo '<div class="grid-item" id="A2" style="background-color:red" >A2</div>';
 }else{
   echo '<div class="grid-item" id="A2" onclick="selectA2()">A2</div>';
 }
 if($avail1[2] == 1){
-    echo '<div class="grid-item" id="A3" >A3(Res)</div>';
+    echo '<div class="grid-item" id="A3" style="background-color:red" >A3</div>';
 }else{
   echo '<div class="grid-item" id="A3" onclick="selectA3()">A3</div>';
 }
@@ -137,80 +146,80 @@ if($avail1[2] == 1){
   <div class="grid-item"style="visibility: hidden;">3</div>  
   <div class="grid-item"style="visibility: hidden;">4</div>
   <?php if($avail1[3] == 1){
-      echo '<div class="grid-item" id="B1" >B1(Res)</div>';
+      echo '<div class="grid-item" id="B1" style="background-color:red" >B1</div>';
   }else{
     echo '<div class="grid-item" id="B1" onclick="selectB1()">B1</div>';
   }
   if($avail1[4] == 1){
-    echo '<div class="grid-item" id="B2" >B2(Res)</div>';
+    echo '<div class="grid-item" id="B2" style="background-color:red" >B2</div>';
 }else{
   echo '<div class="grid-item" id="B2" onclick="selectB2()">B2</div>';
 }
 ?>
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[5] == 1){
-      echo '<div class="grid-item" id="B3" >B3(Res)</div>';
+      echo '<div class="grid-item" id="B3" style="background-color:red" >B3</div>';
   }else{
     echo '<div class="grid-item" id="B3" onclick="selectB3()">B3</div>';
   }
   if($avail1[6] == 1){
-    echo '<div class="grid-item" id="B4" >B4(Res)</div>';
+    echo '<div class="grid-item" id="B4" style="background-color:red" >B4</div>';
 }else{
   echo '<div class="grid-item" id="B4" onclick="selectB4()">B4</div>';
 }
 if($avail1[7] == 1){
-    echo '<div class="grid-item" id="B5" >B5(Res)</div>';
+    echo '<div class="grid-item" id="B5" style="background-color:red" >B5</div>';
 }else{
   echo '<div class="grid-item" id="B5" onclick="selectB5()">B5</div>';
 }
   ?>  
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[8] == 1){
-      echo '<div class="grid-item" id="B6" >B6(Res)</div>';
+      echo '<div class="grid-item" id="B6" style="background-color:red" >B6</div>';
   }else{
     echo '<div class="grid-item" id="B6" onclick="selectB6()">B6</div>';
   }
   if($avail1[9] == 1){
-        echo '<div class="grid-item" id="B7" >B7(Res)</div>';
+        echo '<div class="grid-item" id="B7" style="background-color:red" >B7</div>';
     }else{
     echo '<div class="grid-item" id="B7" onclick="selectB7()">B7</div>';
     }
     if($avail1[10] == 1){
-        echo '<div class="grid-item" id="C1" >C1(Res)</div>';
+        echo '<div class="grid-item" id="C1" style="background-color:red" >C1</div>';
     }else{
     echo '<div class="grid-item" id="C1" onclick="selectC1()">C1</div>';
     }
     if($avail1[11] == 1){
-        echo '<div class="grid-item" id="C2" >C2(Res)</div>';
+        echo '<div class="grid-item" id="C2" style="background-color:red" >C2</div>';
     }else{
     echo '<div class="grid-item" id="C2" onclick="selectC2()">C2</div>';
     }
   ?>   
   <div class="grid-item"style="visibility: hidden;">9</div>  
   <?php if($avail1[12] == 1){
-      echo '<div class="grid-item" id="C3" >C3(Res)</div>';
+      echo '<div class="grid-item" id="C3" style="background-color:red" >C3</div>';
   }else{
     echo '<div class="grid-item" id="C3" onclick="selectC3()">C3</div>';
   }
   if($avail1[13] == 1){
-    echo '<div class="grid-item" id="C4" >C4(Res)</div>';
+    echo '<div class="grid-item" id="C4" style="background-color:red" >C4</div>';
 }else{
   echo '<div class="grid-item" id="C4" onclick="selectC4()">C4</div>';
 }
 if($avail1[14] == 1){
-    echo '<div class="grid-item" id="C5" >C5(Res)</div>';
+    echo '<div class="grid-item" id="C5" style="background-color:red"  >C5</div>';
 }else{
   echo '<div class="grid-item" id="C5" onclick="selectC5()">C5</div>';
 }
   ?>  
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[15] == 1){
-      echo '<div class="grid-item" id="C6" >C6(Res)</div>';
+      echo '<div class="grid-item" id="C6" style="background-color:red" >C6</div>';
   }else{
     echo '<div class="grid-item" id="C6" onclick="selectC6()">C6</div>';
   }
   if($avail1[16] == 1){
-    echo '<div class="grid-item" id="C7" >C7(Res)</div>';
+    echo '<div class="grid-item" id="C7" style="background-color:red" >C7</div>';
 }else{
   echo '<div class="grid-item" id="C7" onclick="selectC7()">C7</div>';
 }

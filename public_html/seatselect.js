@@ -238,23 +238,57 @@ function onClickReset(){
     seat.length = 0;
     let select = seat.toString();
     document.getElementById("seatid").innerHTML = select;
-    document.getElementById("A1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("A2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("A3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B4").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B5").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B6").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("B7").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C4").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C5").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C6").style.backgroundColor="rgba(255, 255, 255, 0.8)";
-    document.getElementById("C7").style.backgroundColor="rgba(255, 255, 255, 0.8)"; 
+    if(document.getElementById("A1").style.backgroundColor != "red"){
+        document.getElementById("A1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("A2").style.backgroundColor != "red"){
+        document.getElementById("A2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("A3").style.backgroundColor != "red"){
+        document.getElementById("A3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B1").style.backgroundColor != "red"){
+        document.getElementById("B1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B2").style.backgroundColor != "red"){
+        document.getElementById("B2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B3").style.backgroundColor != "red"){
+        document.getElementById("B3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B4").style.backgroundColor != "red"){
+        document.getElementById("B4").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B5").style.backgroundColor != "red"){
+        document.getElementById("B5").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B6").style.backgroundColor != "red"){
+        document.getElementById("B6").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("B7").style.backgroundColor != "red"){
+        document.getElementById("B7").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C1").style.backgroundColor != "red"){
+        document.getElementById("C1").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C2").style.backgroundColor != "red"){
+        document.getElementById("C2").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C3").style.backgroundColor != "red"){
+        document.getElementById("C3").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C4").style.backgroundColor != "red"){
+        document.getElementById("C4").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C5").style.backgroundColor != "red"){
+        document.getElementById("C5").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C6").style.backgroundColor != "red"){
+        document.getElementById("C6").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    }
+    if(document.getElementById("C7").style.backgroundColor != "red"){
+        document.getElementById("C7").style.backgroundColor="rgba(255, 255, 255, 0.8)";
+    } 
     a1=1;
     a2=1;
     a3=1;
