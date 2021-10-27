@@ -1,3 +1,17 @@
+<?php
+        session_start();
+        if(!(isset($_SESSION['cart']))){
+            $_SESSION['cart'] = array();
+        }
+        print_r($_SESSION['cart']);
+        if (isset($_GET['seat'])) {
+          //[] is index 0 and it will auto increament
+          $seat=$_GET['seat'];
+          $id = $_GET['id'];
+          $_SESSION['cart'][$id] = $_GET['seat'];
+          header('location: ViewCart.php?id='.$id);
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,14 +59,22 @@
            exit;
         }
     $movie = $_GET['movie'];
+    $date = $_GET['date'];
+    $time = $_GET['time'];
+    $id = array();
     $movie2 = array();
     $date1 = array();
     $time1 = array();
     $threater = array();
-    $movie1 = "SELECT MovieAiringTime.Time,MovieAiringTime.Date, Movie.movieName,MovieAiringTime.theatreID from MovieAiringTime Inner Join Movie ON MovieAiringTime.movieID = Movie.movieID where Movie.movieID =".$movie.";";
+    $date7 = new DateTime($date);
+    $date = $date7->format('Y-m-d');
+    $time7 = new DateTime($time);
+    $time = $time7->format('H:i:s');
+    $movie1 = "SELECT MovieAiringTime.airingID, MovieAiringTime.Time,MovieAiringTime.Date, Movie.movieName,MovieAiringTime.theatreID from MovieAiringTime Inner Join Movie ON MovieAiringTime.movieID = Movie.movieID where Movie.movieID =".$movie." and MovieAiringTime.Date = '".$date."' and MovieAiringTime.Time ='".$time."';";
     $movie1 = $db->query($movie1);
     if ($movie1 ->num_rows >0){
     while ($row = $movie1->fetch_assoc()){
+    $id[] = $row["airingID"];
     $movie2[] = $row["movieName"];
     $date2 = new DateTime($row["Date"]);
     $date1[] = $date2->format('Y-m-d');
@@ -60,50 +82,29 @@
     $time1[] = $time2->format('H.i');
     $threater = $row["theatreID"];
     }}
-    $date = $_GET['date'];
-    $time = $_GET['time'];
-
-    foreach ($time1 as $time3){
-        if($time3 == $time){
-            $a+=1;
-        }
+    else{
+      echo "No match found!";
+      exit;
     }
-    foreach ($date1 as $date3){
-        if($date3 == $date){
-             $b+=1;
-        }
-    }
-    if($a >= 1 && $b>=1){
     echo "<h2>Movie Title: ".$movie2[0]."</h2>";
     echo "<h2>Threatre ".$threater[0]."</h2>";
     echo "<h2>Date: ".$date1[0]."</h2>";
     $time5 = new DateTime($time);
     $time6 = $time5->format('H.i');
     echo "<h2>Time: ".$time6."</h2>";
-    $a=0;
-    $seat[] = array();
-    }
-    else{
-        echo "No match found!";
-        $a=0;
-        exit;
-    }
     $avail1 = array();
     $avail2 = array();
     $date3 = array();
     $time3 = array();
-    $date7 = new DateTime($date);
-    $date = $date7->format('Y-m-d');
-    $time7 = new DateTime($time);
-    $time = $time7->format('H:i:s');
     $avail = "select availability from Threater where theatreID =".$threater[0]." and theatreDate = '".$date."' and theatreTime ='".$time."';";
     $avail = $db->query($avail);
     if ($avail ->num_rows >0){
     while ($row = $avail->fetch_assoc()){
         $avail1[] = $row["availability"];
     }}
+    $db->close();
     ?>
-<form method="post">
+<form method="post" action="" id ="seatForm">
 <div class="grid-container" style="margin-bottom: 50px;">
   <div class="item1">Screen</div>
   <div class="grid-item"style="visibility: hidden;">2</div>
@@ -243,15 +244,24 @@ Total Cost : $<strong><p id='totalcost'style="display:inline">0</p></strong>
 </span>
 </div>
 <button type="button" onClick="onClickReset()">Reset</button>
-<input type="submit" value="Add to Cart" name="submit"style="float:right;"></button><br>
-<?php
-     if(isset($_POST['submit'])){
-      $seat= $_POST['seatid'];
-      echo $seat[0];
-      echo"sss";
-     }
-?>
+<input type="submit" value="Add to Cart" name="submit" id ="submit" style="float:right;"onclick="myFunction()"></button><br>
+<script type="text/javascript">
+    function myFunction()
+    {
+      if(seat == ""){
+      alert("Please select a seat.");
+      location.reload();
+      }
+      else{
+        var url = window.location.href+"&seat="+seat+"&id="+<?php echo $id[0]; ?>;
+        document.getElementById("seatForm").action = url;
+      }
+      
+    }
+    </script>
 </form>
+<p>Your shopping cart contains <?php
+	echo count($_SESSION['cart']); ?> items.</p>
 
 </body>
 </html>

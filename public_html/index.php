@@ -60,13 +60,13 @@
             <div id="navbar">
                 <ul class="top-navbar">
                     <div class="navbar-links">
-                        <li><button class="cta-button" href="now-showing.html">NOW SHOWING</button></li>
-                        <li><a href="coming-soon.html">COMING SOON</a></li>
+                        <li><button class="cta-button" onclick="location.href='now-showing.php'">NOW SHOWING</button></li>
+                        <li><a href="coming-soon.php">COMING SOON</a></li>
                         <li><a href="promotions.html">PROMOTIONS</a></li>
                         <li><a href="index.php">HOME</a></li>
                     </div>
                     <img class="logo-img" src="./assets/new_logo_resized.png"
-                        onclick="window.location.href='index.html'">
+                        onclick="window.location.href='index.php'">
                 </ul>
 
 
