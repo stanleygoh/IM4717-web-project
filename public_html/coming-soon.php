@@ -30,6 +30,10 @@
     $details[] = $row["movieDetails"];
     $duration[] = $row["movieDuration"];
     }}
+    else{
+        echo"No match found";
+        exit();
+    }
     echo $name[0]."<br>";
     echo $rating[0]."<br>";
     echo $stars[0]."<br>";
@@ -47,6 +51,7 @@
     echo $stars[2]."<br>";
     echo $details[2]."<br>";
     echo $duration[2]."<br><br><br>";
+    $db->close();
     ?>
 </body>
 </html>

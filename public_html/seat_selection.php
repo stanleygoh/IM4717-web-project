@@ -3,7 +3,6 @@
         if(!(isset($_SESSION['cart']))){
             $_SESSION['cart'] = array();
         }
-        print_r($_SESSION['cart']);
         if (isset($_GET['seat'])) {
           //[] is index 0 and it will auto increament
           $seat=$_GET['seat'];

@@ -49,6 +49,10 @@
 	$date1[] = $date2->format('Y-m-d');
 	
 	}}
+	else{
+        echo"No match found";
+        exit();
+    }
 		echo $movie2[0];
 		echo "<table border ='1'>
 		<tr>
@@ -69,6 +73,7 @@
 		}}
 		echo"</table>";
 		$count=0;
+		$db->close();
     ?>
 </body>
 </html>

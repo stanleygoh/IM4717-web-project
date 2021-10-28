@@ -68,6 +68,17 @@ $db->close();
 ?>
 <br><a href="index.php">Back to Home</a>
  <a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Empty your cart</a>
- <center><button type="button">Check out</button></center>
-</body> 
+ <form action="confirmation-page.php">
+ <input type="email" name="emailArr" id="email" required placeholder = "Enter your Email here"/>
+ <?php
+ if($a==0){
+    echo"<center><a href='confirmation-page.php'><button disabled>Check out</button></a></center>";
+ }
+ else{
+    echo"<center><a href='confirmation-page.php'><button>Check out</button></a></center>";
+ }
+ ?>
+</form>
+<script type = "text/javascript"  src = "email_validation.js" ></script> 
+</body>
 </html>

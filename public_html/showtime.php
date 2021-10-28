@@ -28,6 +28,10 @@
 	$date1[] = $date2->format('Y-m-d');
 	
 	}}
+	else{
+        echo"No match found";
+        exit();
+    }
 	$date = $_GET['date'];
 	foreach ($date1 as $date3){
         if($date3 == $date){
@@ -60,6 +64,7 @@
 		echo "No match found!";
         $count=0;
 	}
+	$db->close();
 	?>
 </body>
 </html>
