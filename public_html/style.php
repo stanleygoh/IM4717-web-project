@@ -46,10 +46,8 @@
 }
 
 .logo-img {
-    position: relative;
-    display: inline-flex;
-    border: solid white;
-    height: 100%;
+    /* border: solid #C4B480; */
+    transform: translatey(-7px);
 }
 
 #search-bar-section {
@@ -285,15 +283,33 @@
 }
 
 #footer {
-    background-color: #3b3747;
-    color: #f0f5f5;
-    border: none;
+    background-color: #101f2f;
+    color: #C4B480;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+    border-top: solid 1px #C4B480;
     min-height: 50px;
     padding: 20px 10%;
 }
 
+#footer ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
 
+#footer li {
+    margin-bottom: 5px;
+}
 
+#footer a:link {
+    color: #9b8d61;
+}
+
+#footer a:hover {
+    color: #992c2d;
+}
 
 /* COMPONENTS and STYLING */
 .cta-button {

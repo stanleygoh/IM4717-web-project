@@ -67,7 +67,7 @@
                         <li><a href="promotions.html">PROMOTIONS</a></li>
                         <li><a href="index.php">HOME</a></li>
                     </div>
-                    <img class="logo-img" src="./assets/new_logo_resized.png"
+                    <img class="logo-img" src="./assets/logo.png" width="10%"
                         onclick="window.location.href='index.php'">
                 </ul>
 
@@ -290,16 +290,56 @@
             </div>
         </div>
         <footer id="footer">
-            <paragraph class="para">© 2021 SG MoneyLender Pte. Ltd. All Rights
-                Reserved.
-            </paragraph>
+            <div style="display: flex;">
+                <img src=" assets/logo.png" height="120px">
+
+                <div style="width: 100%; display: flex;justify-content: space-evenly;">
+                    <div style="flex-direction: column;">
+                        <h4>
+                            About us
+                        </h4>
+                        <p style="width: 200px;">Started in 2021, we came into the industry to deliver your most beloved
+                            retro films.
+                        </p>
+                    </div>
+
+                    <div style="flex-direction: column;">
+                        <h4>
+                            Location
+                        </h4>
+                        <p>
+                            50 Nanyang Ave,<br>Singapore 639798
+                        </p>
+                    </div>
+                    <img src=" assets/location.jpg" height="120px" style="transform: translate(-40px,15px);">
+
+                    <div style="flex-direction: column;">
+                        <h4>
+                            Follow us
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="www.facebook.com">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="www.twitter.com">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="www.instagram.com">Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <p>© 2021 Huat Zai Ya Pte. Ltd. All Rights
+                Reserved 2021
+            </p>
         </footer>
     </div>
 
     <!-- USING CDN INSTEAD OF NODE_MODULES -->
-    <script src="js/scripts.js"></script>
-
-    <!-- endbuild -->
+    <script src=" js/scripts.js"> </script> <!-- endbuild -->
 </body>
 
 </html>
