@@ -47,6 +47,7 @@
 
 .logo-img {
     /* border: solid #C4B480; */
+    cursor: pointer;
     transform: translatey(-7px);
 }
 
@@ -78,6 +79,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
 
+    cursor: pointer;
     background-color: #C4B480;
     border: none;
     border-radius: 4px;
@@ -104,6 +106,7 @@
     height: 30px;
     width: 200px;
 
+    cursor: pointer;
     background-color: #C4B480;
     border: none;
     border-radius: 4px;
@@ -114,6 +117,7 @@
 }
 
 .search-bar-button {
+    cursor: pointer;
     height: 40px;
     width: 100px;
     transform: translatey(5px);
@@ -130,6 +134,7 @@
 }
 
 
+
 #header {
     background-color: #101f2f;
     position: fixed;
@@ -143,7 +148,6 @@
 
 /** CAROUSEL  */
 #carousel-section {
-    margin-top: 200px;
     background-color: #101f2f;
     min-height: 200px;
     padding: 20px;
@@ -271,7 +275,7 @@
 
 /** end of carousel */
 
-#now-showing-section {
+#movie-gallery-section {
     margin: 0 10%;
     padding: 30px 0 50px 0px;
     color: #C4B480;
@@ -313,8 +317,9 @@
 
 /* COMPONENTS and STYLING */
 .cta-button {
+    cursor: pointer;
     height: 40px;
-    margin-right: 0;
+    margin-right: 5px;
     background: linear-gradient(#C4B480, #dac992, #ebf8e1);
     border: none;
     border-radius: 5px;
@@ -323,7 +328,24 @@
         Arial,
         sans-serif;
     font-weight: bold;
+    animation: breathing 5s linear infinite;
+}
 
+@keyframes breathing {
+    0% {
+        box-shadow: 0 0 0 0px rgba(230, 205, 110, 0.25),
+            0 0 0 0px rgba(230, 205, 110, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 4px 4px rgba(240, 224, 78, 0.4),
+            0 0 0 7px rgba(231, 212, 43, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(230, 205, 110, 0.25),
+            0 0 0 0px rgba(230, 205, 110, 0.2);
+    }
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -365,7 +387,9 @@
 } */
 
 
-.movie-gallery {}
+.movie-gallery {
+    padding-top: 5px;
+}
 
 .movie-gallery-row {
     width: 100%;

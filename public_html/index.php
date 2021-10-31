@@ -157,6 +157,11 @@
                 </div>
             </div>
         </div>
+
+        <div style="margin-bottom: 200px;">
+            <!-- SEPARATOR TO ALIGN HEADER -->
+        </div>
+
         <!-- Carousel Section -->
         <div id="carousel-section" style="padding:  0;">
             <!-- carousel component -->
@@ -195,12 +200,10 @@
             <script type="text/javascript" src="./js/carousel.js"></script>
         </div>
         <!-- NOW SHOWING SECTION -->
-        <div id="now-showing-section">
+        <div id="movie-gallery-section">
             <h1>
                 NOW SHOWING
             </h1>
-
-            <br>
 
             <div class="movie-gallery">
                 <!-- <div class="movie-card">
