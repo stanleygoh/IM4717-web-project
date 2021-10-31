@@ -60,7 +60,8 @@
             <div id="navbar">
                 <ul class="top-navbar">
                     <div class="navbar-links">
-                        <li><button class="cta-button" onclick="location.href='now-showing.php'">NOW SHOWING</button>
+                        <li style="margin-right: 0;"><button class="cta-button"
+                                onclick="location.href='now-showing.php'">NOW SHOWING</button>
                         </li>
                         <li><a href="coming-soon.php">COMING SOON</a></li>
                         <li><a href="promotions.html">PROMOTIONS</a></li>
@@ -75,77 +76,83 @@
             <!-- Red Search bar Section -->
             <div id="search-bar-section">
                 <div id="search-bar">
-                    <form method="post">
-                        <select name="movies" id="movies"
-                            style="height: 30px; width: 400px; margin: 0px 30px 10px 0px;">
-                            <option value="" disabled selected>Select a Movie</option>
-                            <option value="1"><?php echo $movieName[0]?></option>
-                            <option value="2"><?php echo $movieName[1]?></option>
-                            <option value="3"><?php echo $movieName[2]?></option>
-                            <option value="4"><?php echo $movieName[3]?></option>
-                            <option value="5"><?php echo $movieName[4]?></option>
-                            <option value="6"><?php echo $movieName[5]?></option>
-                        </select>
-                        <select name="genre" id="genre" style="height: 30px; width: 250px; margin:30px 30px 10px 20px;">
-                            <option value="" disabled selected>Select a Genre</option>
-                            <option value="1"><?php echo $moviegenre[0]?></option>
-                            <option value="2"><?php echo $moviegenre[1]?></option>
-                            <option value="3"><?php echo $moviegenre[2]?></option>
-                            <option value="4"><?php echo $moviegenre[3]?></option>
-                            <option value="5"><?php echo $moviegenre[4]?></option>
-                            <option value="6"><?php echo $moviegenre[5]?></option>
-                            <option value="7"><?php echo $moviegenre[6]?></option>
-                        </select>
-                        <td>
-                            <label for="Date" style="color: #101f2f; font-size:25px;"><strong>Date:</strong></label>
-                            <input type="date" name="Date" id="Date"
-                                style="height: 30px; width: 200px; margin:30px 30px 10px 10px;">
-                            <select name="time" id="time"
-                                style="height: 30px; width: 200px; margin:30px 30px 10px 20px;">
-                                <option value="" disabled selected>Select a Time</option>
+                    <form method="post" style="width: 100%; height: 100%; display: flex; justify-content: center;
+    align-items: center; vertical-align: middle;">
+                        <div class="search-bar-selection-container-1">
+                            <select name="movies" class="search-bar-selection-1" id="movies">
+                                <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Select a Movie</option>
+                                <option value="1"><?php echo $movieName[0]?></option>
+                                <option value="2"><?php echo $movieName[1]?></option>
+                                <option value="3"><?php echo $movieName[2]?></option>
+                                <option value="4"><?php echo $movieName[3]?></option>
+                                <option value="5"><?php echo $movieName[4]?></option>
+                                <option value="6"><?php echo $movieName[5]?></option>
+                            </select>
+                            <select name="genre" id="genre" class="search-bar-selection-1">
+                                <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Or select a Genre</option>
+                                <option value="1"><?php echo $moviegenre[0]?></option>
+                                <option value="2"><?php echo $moviegenre[1]?></option>
+                                <option value="3"><?php echo $moviegenre[2]?></option>
+                                <option value="4"><?php echo $moviegenre[3]?></option>
+                                <option value="5"><?php echo $moviegenre[4]?></option>
+                                <option value="6"><?php echo $moviegenre[5]?></option>
+                                <option value="7"><?php echo $moviegenre[6]?></option>
+                            </select>
+                        </div>
+                        <div class="search-bar-selection-container-2">
+                            <div style="display: inline-flex; flex-direction: column;">
+                                <label for=" date" class="search-bar-selection-label">Select
+                                    a Date:</label>
+                                <input type="date" name="Date" id="Date" class="search-bar-selection-2">
+                            </div>
+
+                            <select name="time" id="time" class="search-bar-selection-2">
+                                <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Select a Time</option>
                                 <option value="1">11.30</option>
                                 <option value="2">14.30</option>
                                 <option value="3">17.30</option>
                                 <option value="4">20.30</option>
                             </select>
-                            <input type="reset" value="Search"
-                                style="height: 30px; width: 100px; margin:30px 30px 10px 20px;" id="search"
-                                onclick="myFunction()"><br>
-                            <script type="text/javascript">
-                                function myFunction() {
-                                    var m_index = document.getElementById("movies");
-                                    var g_index = document.getElementById("genre");
-                                    var t_index = document.getElementById("time");
-                                    var d_index = document.getElementById("Date").value;
-                                    //possible to amend for alert "No match found."
-                                    if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index)))) && !(isNaN(
-                                            parseInt(t_index.value)))) {
-                                        var m_index = parseInt(m_index.value);
-                                        t_index = t_index.options[t_index.selectedIndex].text;
-                                        location.href = "seat_selection.php?movie=" + m_index + "&date=" + d_index +
-                                            "&time=" + t_index;
+                            <input type="reset" value="Search" class="search-bar-button" id="search"
+                                onclick="myFunction()">
+                            <img src="assets/search.png" width="4%"
+                                style="position: relative; transform: translate(-30px, -3px);">
+                        </div>
+                        <script type="text/javascript">
+                            function myFunction() {
+                                var m_index = document.getElementById("movies");
+                                var g_index = document.getElementById("genre");
+                                var t_index = document.getElementById("time");
+                                var d_index = document.getElementById("Date").value;
+                                //possible to amend for alert "No match found."
+                                if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index)))) && !(isNaN(
+                                        parseInt(t_index.value)))) {
+                                    var m_index = parseInt(m_index.value);
+                                    t_index = t_index.options[t_index.selectedIndex].text;
+                                    location.href = "seat_selection.php?movie=" + m_index + "&date=" + d_index +
+                                        "&time=" + t_index;
 
-                                    } else if (!(isNaN(parseInt(g_index.value))) && (!(isNaN(Date.parse(d_index))))) {
-                                        var g_index = parseInt(g_index.value);
-                                        location.href = "showtime_genre.php?genre=" + g_index + "&date=" + d_index;
-                                    } else if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index))))) {
-                                        var m_index = parseInt(m_index.value);
-                                        location.href = "showtime.php?movie=" + m_index + "&date=" + d_index;
-                                    } else if (!(isNaN(parseInt(m_index.value))) && ((isNaN(Date.parse(d_index)))) && (
-                                            isNaN(parseInt(t_index.value)))) {
-                                        var m_index = parseInt(m_index.value);
-                                        location.href = "movieDetails.php?movie=" + m_index;
-                                    } else if (!(isNaN(parseInt(g_index.value))) && ((isNaN(Date.parse(d_index)))) && (
-                                            isNaN(parseInt(t_index.value)))) {
-                                        var g_index = parseInt(g_index.value);
-                                        location.href = "genre.php?genre=" + g_index;
-                                    } else {
-                                        alert("Invalid option please try again!");
-                                        location.reload();
-                                    }
+                                } else if (!(isNaN(parseInt(g_index.value))) && (!(isNaN(Date.parse(d_index))))) {
+                                    var g_index = parseInt(g_index.value);
+                                    location.href = "showtime_genre.php?genre=" + g_index + "&date=" + d_index;
+                                } else if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index))))) {
+                                    var m_index = parseInt(m_index.value);
+                                    location.href = "showtime.php?movie=" + m_index + "&date=" + d_index;
+                                } else if (!(isNaN(parseInt(m_index.value))) && ((isNaN(Date.parse(d_index)))) && (
+                                        isNaN(parseInt(t_index.value)))) {
+                                    var m_index = parseInt(m_index.value);
+                                    location.href = "movieDetails.php?movie=" + m_index;
+                                } else if (!(isNaN(parseInt(g_index.value))) && ((isNaN(Date.parse(d_index)))) && (
+                                        isNaN(parseInt(t_index.value)))) {
+                                    var g_index = parseInt(g_index.value);
+                                    location.href = "genre.php?genre=" + g_index;
+                                } else {
+                                    alert("Invalid option please try again!");
+                                    location.reload();
                                 }
-                            </script>
-                            <script type="text/javascript" src="validation.js"></script>
+                            }
+                        </script>
+                        <script type="text/javascript" src="validation.js"></script>
                     </form>
                 </div>
             </div>

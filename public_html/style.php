@@ -55,22 +55,82 @@
 #search-bar-section {
     height: 100px;
     background-color: #992c2d;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
 }
 
 #search-bar {
-    width: 80%;
+    width: 70%;
     height: 100%;
     margin: 0 auto;
+
 }
 
-.movies-123 {
-    width: 50px;
-    margin-left: 100px;
-    border: solid 5px;
-    color: red;
-    background-color: #191919;
-    font-size: 50px;
+.search-bar-selection-container-1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
+
+.search-bar-selection-1 {
+    height: 30px;
+    width: 400px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    background-color: #C4B480;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+.search-bar-selection-container-2 {
+    display: flex;
+    width: 100%;
+    margin-left: 20%;
+    align-items: flex-end;
+}
+
+.search-bar-selection-label {
+    vertical-align: top;
+    height: fit-content;
+}
+
+.search-bar-selection-2 {
+    margin-right: 15px;
+    height: 30px;
+    width: 200px;
+
+    background-color: #C4B480;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+.search-bar-button {
+    height: 40px;
+    width: 100px;
+    transform: translatey(5px);
+    padding-right: 27px;
+
+    background-color: #C4B480;
+    border: none;
+    border-radius: 4px;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
 
 #header {
     background-color: #101f2f;
@@ -239,6 +299,7 @@
 /* COMPONENTS and STYLING */
 .cta-button {
     height: 40px;
+    margin-right: 0;
     background: linear-gradient(#C4B480, #dac992, #ebf8e1);
     border: none;
     border-radius: 5px;
