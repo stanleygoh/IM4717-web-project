@@ -71,7 +71,7 @@
                         onclick="window.location.href='index.php'">
                 </ul>
 
-
+                <button onclick="window.location.href='ViewCart.php'">Cart</button>
             </div>
             <!-- Red Search bar Section -->
             <div id="search-bar-section">
@@ -340,9 +340,6 @@
             </p>
         </footer>
     </div>
-
-    <!-- USING CDN INSTEAD OF NODE_MODULES -->
-    <script src=" js/scripts.js"> </script> <!-- endbuild -->
 </body>
 
 </html>
