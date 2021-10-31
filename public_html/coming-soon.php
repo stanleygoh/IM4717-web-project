@@ -168,7 +168,7 @@
             <!-- COMING SOON SECTION -->
             <div id="movie-gallery-section">
                 <h1>
-                    COMING SOON REMEMBER CHANGE THE MOVIES and LINKING
+                    COMING SOON
                 </h1>
 
                 <div class="movie-gallery">
@@ -184,10 +184,40 @@
                     </div>
                 </div> -->
 
+                    <?php
+    	@ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+        //check if connection to db is possible
+          if (mysqli_connect_errno()) {
+             echo "Error: Could not connect to database.  Please try again later.";
+             exit;
+          }
+    $name = array();
+    $rating =  array();
+    $stars =  array();
+    $details =  array();
+    $duration = array();
+    $movie = 'select movieName, movieRating, movieStars, movieDetails, movieDuration from MovieComingSoon;';
+    $movie = $db->query($movie);   
+    if ($movie ->num_rows >0){
+    while ($row = $movie->fetch_assoc()){
+    $name[] = $row["movieName"];
+    $rating[] = $row["movieRating"];
+    $stars[] = $row["movieStars"];
+    $details[] = $row["movieDetails"];
+    $duration[] = $row["movieDuration"];
+    }}
+    else{
+        echo"No match found";
+        exit();
+    }
+
+    $db->close();
+    ?>
+
                     <!-- 1st Row for 4 movies -->
                     <div class="movie-gallery-row">
                         <div class="movie-card">
-                            <img src="./Image/movie-1.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            <img src="./Image/movie-7.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=1'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
                                 <p>Title: <?php echo $name[0]; ?></p>
@@ -198,7 +228,7 @@
                         </div>
 
                         <div class="movie-card">
-                            <img src="./Image/movie-2.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            <img src="./Image/movie-8.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=2'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
                                 <p>Title: <?php echo $name[1]; ?></p>
@@ -209,7 +239,7 @@
                         </div>
 
                         <div class="movie-card">
-                            <img src="./Image/movie-3.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            <img src="./Image/movie-9.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=3'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
                                 <p>Title: <?php echo $name[2]; ?></p>
@@ -219,21 +249,12 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
-                            <img src="./Image/movie-4.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=4'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[3]; ?></p>
-                                <p>Stars: <?php echo $stars[3]; ?></p>
-                                <p>Rating: <?php echo $rating[3]; ?></p>
-                                <p>Duration: <?php echo $duration[3]; ?></p>
-                            </div>
-                        </div>
+
                     </div>
 
                     <!-- 2nd Row for max 4 movies -->
                     <div class="movie-gallery-row">
-                        <div class="movie-card">
+                        <!-- <div class="movie-card">
                             <img src="./Image/movie-5.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=5'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -242,18 +263,8 @@
                                 <p>Rating: <?php echo $rating[4]; ?></p>
                                 <p>Duration: <?php echo $duration[4]; ?></p>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="movie-card">
-                            <img src="./Image/movie-6.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=6'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[5]; ?></p>
-                                <p>Stars: <?php echo $stars[5]; ?></p>
-                                <p>Rating: <?php echo $rating[5]; ?></p>
-                                <p>Duration: <?php echo $duration[5]; ?></p>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -309,52 +320,5 @@
                 </p>
             </footer>
         </div>
-        Coming Soon<br>
-        <?php
-    	@ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-        //check if connection to db is possible
-          if (mysqli_connect_errno()) {
-             echo "Error: Could not connect to database.  Please try again later.";
-             exit;
-          }
-    $name = array();
-    $rating =  array();
-    $stars =  array();
-    $details =  array();
-    $duration = array();
-    $movie = 'select movieName, movieRating, movieStars, movieDetails, movieDuration from MovieComingSoon;';
-    $movie = $db->query($movie);   
-    if ($movie ->num_rows >0){
-    while ($row = $movie->fetch_assoc()){
-    $name[] = $row["movieName"];
-    $rating[] = $row["movieRating"];
-    $stars[] = $row["movieStars"];
-    $details[] = $row["movieDetails"];
-    $duration[] = $row["movieDuration"];
-    }}
-    else{
-        echo"No match found";
-        exit();
-    }
-    echo $name[0]."<br>";
-    echo $rating[0]."<br>";
-    echo $stars[0]."<br>";
-    echo $details[0]."<br>";
-    echo $duration[0]."<br><br><br>";
-    
-    echo $name[1]."<br>";
-    echo $rating[1]."<br>";
-    echo $stars[1]."<br>";
-    echo $details[1]."<br>";
-    echo $duration[1]."<br><br><br>";
-
-    echo $name[2]."<br>";
-    echo $rating[2]."<br>";
-    echo $stars[2]."<br>";
-    echo $details[2]."<br>";
-    echo $duration[2]."<br><br><br>";
-    $db->close();
-    ?>
-    </body>
 
 </html>
