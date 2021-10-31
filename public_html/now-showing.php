@@ -66,7 +66,7 @@
                                     onclick="location.href='now-showing.php'">NOW SHOWING</button>
                             </li>
                             <li><a href="coming-soon.php">COMING SOON</a></li>
-                            <li><a href="promotions.html">PROMOTIONS</a></li>
+                            <li><a href="promotions.php">PROMOTIONS</a></li>
                             <li><a href="index.php">HOME</a></li>
                         </div>
                         <img class="logo-img" src="./assets/logo.png" width="10%"
@@ -166,13 +166,13 @@
 
 
             <!-- NOW SHOWING SECTION -->
-            <div id="movie-gallery-section">
+            <div id="content-section">
                 <h1>
                     NOW SHOWING
                 </h1>
 
                 <div class="movie-gallery">
-                    <!-- <div class="movie-card">
+                    <!-- <div class="movie-card hover-shadow">
                     <div class="movie-card-poster">
                         <img src="./assets/award2.png" alt="Avatar">
                     </div>
@@ -186,7 +186,7 @@
 
                     <!-- 1st Row for 4 movies -->
                     <div class="movie-gallery-row">
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-1.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=1'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -197,7 +197,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-2.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=2'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -208,7 +208,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-3.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=3'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -219,7 +219,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-4.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=4'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -233,7 +233,7 @@
 
                     <!-- 2nd Row for max 4 movies -->
                     <div class="movie-gallery-row">
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-5.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=5'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -244,7 +244,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-6.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=6'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">

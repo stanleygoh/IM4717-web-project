@@ -273,9 +273,18 @@
     }
 }
 
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(223, 223, 223, 0.2), 0 8px 22px 0 rgba(226, 226, 226, 0.19);
+}
+
 /** end of carousel */
 
-#movie-gallery-section {
+#content-section {
     margin: 0 10%;
     padding: 30px 0 50px 0px;
     color: #C4B480;

@@ -58,7 +58,7 @@
         <div id="container">
 
             <!-- ! custom make own navbar -->
-            <div id="header">
+            <div id="header" style="position: unset;">
                 <div id="navbar">
                     <ul class="top-navbar">
                         <div class="navbar-links">
@@ -160,114 +160,268 @@
                 </div>
             </div>
 
-            <div style="margin-bottom: 200px;">
-                <!-- SEPARATOR TO ALIGN HEADER -->
-            </div>
+            <!-- <div style="margin-bottom: 200px;">
+            </div> -->
 
 
             <!-- COMING SOON SECTION -->
             <div id="content-section">
+                <style>
+                    body {
+                        font-family: Verdana, sans-serif;
+                        margin: 0;
+                    }
+
+                    * {
+                        box-sizing: border-box;
+                    }
+
+                    .row>.column {
+                        padding: 0 8px;
+                    }
+
+                    .row:after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+
+                    .column {
+                        float: left;
+                        width: 25%;
+                    }
+
+                    /* The Modal (background) */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 1;
+                        padding-top: 50px;
+                        padding-bottom: 250px;
+                        left: 15%;
+                        top: 5%;
+                        width: 70%;
+                        height: 85%;
+                        overflow: auto;
+                        border-radius: 15px;
+                        background-color: rgba(31, 31, 31, 0.98);
+                    }
+
+                    /* Modal Content */
+                    .modal-content {
+                        position: relative;
+                        background-color: #fefefe;
+                        margin: 0 auto;
+                        padding: 0;
+                        width: 90%;
+                        max-width: 500px;
+                    }
+
+                    /* The Close Button */
+                    .close {
+                        color: white;
+                        position: absolute;
+                        top: 10px;
+                        right: 25px;
+                        font-size: 35px;
+                        font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: #999;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                    .mySlides {
+                        display: none;
+                    }
+
+                    .cursor {
+                        cursor: pointer;
+                    }
+
+                    /* Next & previous buttons */
+                    .prev,
+                    .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -50px;
+                        color: whitesmoke;
+                        font-weight: bold;
+                        font-size: 20px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        user-select: none;
+                    }
+
+                    /* Position the "next button" to the right */
+                    .next {
+                        right: -15%;
+                        border-radius: 3px 0 0 3px;
+                    }
+
+                    /* Position the "next button" to the right */
+                    .prev {
+                        left: -15%;
+                        border-radius: 3px 0 0 3px;
+                    }
+
+                    /* On hover, add a black background color with a little bit see-through */
+                    .prev:hover,
+                    .next:hover {
+                        background-color: rgba(179, 140, 67, 0.8);
+                    }
+
+                    /* Number text (1/3 etc) */
+                    .numbertext {
+                        color: #f2f2f2;
+                        font-size: 12px;
+                        padding: 8px 12px;
+                        position: absolute;
+                        top: 0;
+                    }
+
+                    img {
+                        margin-bottom: -4px;
+                    }
+
+                    .caption-container {
+                        text-align: center;
+                        background-color: black;
+                        padding: 2px 16px;
+                        color: white;
+                    }
+
+                    /* .demo {
+                        opacity: 0.6;
+                    } */
+
+                    .active,
+                    .demo:hover {
+                        opacity: 1;
+                    }
+                </style>
                 <h1>
-                    COMING SOON
+                    PROMOTIONS
                 </h1>
-
-                <div class="movie-gallery">
-                    <!-- <div class="movie-card">
-                    <div class="movie-card-poster">
-                        <img src="./assets/award2.png" alt="Avatar">
+                <br>
+                <div class="row">
+                    <div class="column">
+                        <img src="Image/promo-1.jpg" style="height: 400px;" onclick="openModal();currentSlide(1)"
+                            class="hover-shadow cursor">
                     </div>
-                    <div class="movie-card-details">
-                        <p>Title: </p>
-                        <p>Genre: </p>
-                        <p>Duration: </p>
-                        <p>Showtime: </p>
+                    <div class="column">
+                        <img src="Image/promo-2.jpg" style="height: 400px;" onclick="openModal();currentSlide(2)"
+                            class="hover-shadow cursor">
                     </div>
-                </div> -->
-
-                    <?php
-    	@ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-        //check if connection to db is possible
-          if (mysqli_connect_errno()) {
-             echo "Error: Could not connect to database.  Please try again later.";
-             exit;
-          }
-    $name = array();
-    $rating =  array();
-    $stars =  array();
-    $details =  array();
-    $duration = array();
-    $movie = 'select movieName, movieRating, movieStars, movieDetails, movieDuration from MovieComingSoon;';
-    $movie = $db->query($movie);   
-    if ($movie ->num_rows >0){
-    while ($row = $movie->fetch_assoc()){
-    $name[] = $row["movieName"];
-    $rating[] = $row["movieRating"];
-    $stars[] = $row["movieStars"];
-    $details[] = $row["movieDetails"];
-    $duration[] = $row["movieDuration"];
-    }}
-    else{
-        echo"No match found";
-        exit();
-    }
-
-    $db->close();
-    ?>
-
-                    <!-- 1st Row for 4 movies -->
-                    <div class="movie-gallery-row">
-                        <div class="movie-card">
-                            <img src="./Image/movie-7.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=1'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[0]; ?></p>
-                                <p>Stars: <?php echo $stars[0]; ?></p>
-                                <p>Rating: <?php echo $rating[0]; ?></p>
-                                <p>Duration: <?php echo $duration[0]; ?></p>
-                            </div>
-                        </div>
-
-                        <div class="movie-card">
-                            <img src="./Image/movie-8.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=2'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[1]; ?></p>
-                                <p>Stars: <?php echo $stars[1]; ?></p>
-                                <p>Rating: <?php echo $rating[1]; ?></p>
-                                <p>Duration: <?php echo $duration[1]; ?></p>
-                            </div>
-                        </div>
-
-                        <div class="movie-card">
-                            <img src="./Image/movie-9.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=3'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[2]; ?></p>
-                                <p>Stars: <?php echo $stars[2]; ?></p>
-                                <p>Rating: <?php echo $rating[2]; ?></p>
-                                <p>Duration: <?php echo $duration[2]; ?></p>
-                            </div>
-                        </div>
-
-
+                    <div class="column">
+                        <img src="Image/promo-3.jpg" style="height: 400px;" onclick="openModal();currentSlide(3)"
+                            class="hover-shadow cursor">
                     </div>
-
-                    <!-- 2nd Row for max 4 movies -->
-                    <div class="movie-gallery-row">
-                        <!-- <div class="movie-card">
-                            <img src="./Image/movie-5.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
-                                onclick="document.location.href='movieDetails.php?movie=5'">
-                            <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                                <p>Title: <?php echo $name[4]; ?></p>
-                                <p>Stars: <?php echo $stars[4]; ?></p>
-                                <p>Rating: <?php echo $rating[4]; ?></p>
-                                <p>Duration: <?php echo $duration[4]; ?></p>
-                            </div>
-                        </div> -->
-
-
+                    <div class="column">
+                        <img src="Image/promo-4.jpg" style="height: 400px;" onclick="openModal();currentSlide(4)"
+                            class="hover-shadow cursor">
                     </div>
                 </div>
+
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 4</div>
+                            <img src="Image/promo-1.jpg" style="width: 100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 4</div>
+                            <img src="Image/promo-2.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 4</div>
+                            <img src="Image/promo-3.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 4</div>
+                            <img src="Image/promo-4.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+
+                        <div class="column">
+                            <img class="demo cursor" src="Image/promo-1.jpg" style="width:100%"
+                                onclick="currentSlide(1)" alt="">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="Image/promo-2.jpg" style="width:100%"
+                                onclick="currentSlide(2)" alt="">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="Image/promo-3.jpg" style=" width:100%"
+                                onclick="currentSlide(3)" alt="">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="Image/promo-4.jpg" style="width:100%"
+                                onclick="currentSlide(4)" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function openModal() {
+                        document.getElementById("myModal").style.display = "block";
+                    }
+
+                    function closeModal() {
+                        document.getElementById("myModal").style.display = "none";
+                    }
+
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("demo");
+                        var captionText = document.getElementById("caption");
+                        if (n > slides.length) {
+                            slideIndex = 1
+                        }
+                        if (n < 1) {
+                            slideIndex = slides.length
+                        }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                        captionText.innerHTML = dots[slideIndex - 1].alt;
+                    }
+                </script>
             </div>
 
 
