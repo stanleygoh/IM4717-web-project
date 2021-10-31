@@ -275,8 +275,7 @@
 
 #now-showing-section {
     margin: 0 10%;
-    padding: 20px 0;
-    border: solid white;
+    padding: 30px 0 50px 0px;
     color: #C4B480;
     min-height: 50px;
     font-family: 'Franklin Gothic Medium',
@@ -350,12 +349,23 @@
 } */
 
 
+.movie-gallery {}
+
+.movie-gallery-row {
+    width: 100%;
+    display: flex;
+    margin: 20px auto;
+}
+
+
 .movie-card {
     position: relative;
     background-color: transparent;
-    width: 200px;
-    height: 240px;
-    border: solid white 1px;
+    width: 240px;
+    height: 320px;
+    border: solid rgba(196, 180, 128, 0.5) 0.5px;
+    cursor: pointer;
+    margin: 10px 30px 20px 30px;
 }
 
 
@@ -363,19 +373,21 @@
 .movie-card-poster {
     opacity: 1;
     display: block;
-    /* width: 100%; */
-    width: 200px;
-    height: 240px;
+    width: 100%;
+    height: 320px;
+
     transition: .5s ease;
     backface-visibility: hidden;
 }
 
 .movie-card-details {
+    width: 90%;
+    float: left;
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 50%;
-    left: 30%;
+    top: 40%;
+    left: 45%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: end;

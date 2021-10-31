@@ -163,21 +163,22 @@
             <div class="carousel-component">
                 <!-- Full-width images with number and caption text -->
                 <div class="carousel-content fade">
-                    <div class="numbertext">1 / 3</div>
+                    <!-- <div class="numbertext">1 / 3</div> -->
                     <img src="./Image/bruce-img.jpg" style="width:100%">
-                    <div class="text">Caption Text</div>
+                    <div class="text">Welcome to Huat Zai Ya Theatres, your one-stop portal for retro films!</div>
                 </div>
 
                 <div class="carousel-content fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="./Image/homepg_graduation.jpg" style="width:100%">
-                    <div class="text">Caption Two</div>
+                    <!-- <div class="numbertext">2 / 3</div> -->
+                    <img src="./Image/jackie-img2.jpg" style="width:100%">
+                    <div class="text">Drunken Master (1978). A fondly remembered classic, coming soon! </div>
                 </div>
 
                 <div class="carousel-content fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="./Image/homepg_wedding.jpeg" style="width:100%">
-                    <div class="text">Caption Three</div>
+                    <!-- <div class="numbertext">3 / 3</div> -->
+                    <img src="./Image/jackie-img.jpg" style="width:100%">
+                    <div class="text">Rush Hour (1998). This globally acclaimed film will be aired throughout December!
+                    </div>
                 </div>
 
                 <!-- Next and previous buttons -->
@@ -214,18 +215,77 @@
                     </div>
                 </div> -->
 
-                <hr>
-
-
-                <div class="movie-card">
-                    <img src="./assets/award1.png" alt="Avatar" class="movie-card-poster" style="width:100%"
-                        onclick="document.location.href='movieDetails.php?movie=1'">
-                    <div class="movie-card-details" style="text-align: left; margin-left:20px;">
-                        <p>Title: <?php echo $name[0]; ?></p>
-                        <p>Stars: <?php echo $stars[0]; ?></p>
-                        <p>Rating: <?php echo $rating[0]; ?></p>
-                        <p>Duration: <?php echo $duration[0]; ?></p>
+                <!-- 1st Row for 4 movies -->
+                <div class="movie-gallery-row">
+                    <div class="movie-card">
+                        <img src="./Image/movie-1.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=1'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[0]; ?></p>
+                            <p>Stars: <?php echo $stars[0]; ?></p>
+                            <p>Rating: <?php echo $rating[0]; ?></p>
+                            <p>Duration: <?php echo $duration[0]; ?></p>
+                        </div>
                     </div>
+
+                    <div class="movie-card">
+                        <img src="./Image/movie-2.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=2'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[1]; ?></p>
+                            <p>Stars: <?php echo $stars[1]; ?></p>
+                            <p>Rating: <?php echo $rating[1]; ?></p>
+                            <p>Duration: <?php echo $duration[1]; ?></p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="./Image/movie-3.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=3'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[2]; ?></p>
+                            <p>Stars: <?php echo $stars[2]; ?></p>
+                            <p>Rating: <?php echo $rating[2]; ?></p>
+                            <p>Duration: <?php echo $duration[2]; ?></p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="./Image/movie-4.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=4'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[3]; ?></p>
+                            <p>Stars: <?php echo $stars[3]; ?></p>
+                            <p>Rating: <?php echo $rating[3]; ?></p>
+                            <p>Duration: <?php echo $duration[3]; ?></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd Row for max 4 movies -->
+                <div class="movie-gallery-row">
+                    <div class="movie-card">
+                        <img src="./Image/movie-5.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=5'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[4]; ?></p>
+                            <p>Stars: <?php echo $stars[4]; ?></p>
+                            <p>Rating: <?php echo $rating[4]; ?></p>
+                            <p>Duration: <?php echo $duration[4]; ?></p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="./Image/movie-6.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
+                            onclick="document.location.href='movieDetails.php?movie=6'">
+                        <div class="movie-card-details" style="text-align: left; margin-left:20px;">
+                            <p>Title: <?php echo $name[5]; ?></p>
+                            <p>Stars: <?php echo $stars[5]; ?></p>
+                            <p>Rating: <?php echo $rating[5]; ?></p>
+                            <p>Duration: <?php echo $duration[5]; ?></p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
