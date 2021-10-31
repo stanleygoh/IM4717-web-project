@@ -216,7 +216,7 @@
 
                     <!-- 1st Row for 4 movies -->
                     <div class="movie-gallery-row">
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-7.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=1'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -227,7 +227,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-8.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=2'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">
@@ -238,7 +238,7 @@
                             </div>
                         </div>
 
-                        <div class="movie-card">
+                        <div class="movie-card hover-shadow">
                             <img src="./Image/movie-9.jpg" alt="Avatar" class="movie-card-poster" style="width:100%"
                                 onclick="document.location.href='movieDetails.php?movie=3'">
                             <div class="movie-card-details" style="text-align: left; margin-left:20px;">

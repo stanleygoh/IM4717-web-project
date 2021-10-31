@@ -412,7 +412,7 @@ img.hover-shadow {
     background-color: transparent;
     width: 240px;
     height: 320px;
-    border: solid rgba(196, 180, 128, 0.5) 0.5px;
+    /* border: solid rgba(196, 180, 128, 0.5) 0.1px; */
     cursor: pointer;
     margin: 10px 30px 20px 30px;
 }

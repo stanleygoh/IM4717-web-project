@@ -118,7 +118,7 @@
                                 <input type="reset" value="Search" class="search-bar-button" id="search"
                                     onclick="myFunction()">
                                 <img src="assets/search.png" width="4%"
-                                    style="position: relative; transform: translate(-30px, -3px);">
+                                    style="position: relative; transform: translate(-30px, -7px);">
                             </div>
                             <script type="text/javascript">
                                 function myFunction() {
