@@ -285,10 +285,10 @@ img.hover-shadow {
 /** end of carousel */
 
 #content-section {
+    min-height: 230px;
     margin: 0 10%;
     padding: 30px 0 50px 0px;
     color: #C4B480;
-    min-height: 50px;
     font-family: 'Franklin Gothic Medium',
         'Arial Narrow',
         Arial,
@@ -357,44 +357,42 @@ img.hover-shadow {
     }
 }
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-/* .movie-card {
-    position: relative;
-    background-color: transparent;
-    width: 200px;
-    height: 240px;
-    border: 1px solid #f1f1f1;
+
+.cart-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    z-index: 10;
+    display: flex;
 }
 
-.movie-card-details {
-    display: none;
-    background-color: rgba(44, 44, 44, 0.8);
-    width: 200px;
-    height: 240px;
+.cart-text {
+    cursor: pointer;
 
+    height: 30px;
+    padding: 5px 12px 5px 18px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+    font-weight: bold;
+    background: linear-gradient(#C4B480, #dac992, #ebf8e1);
 }
 
-.movie-card-poster {
-    background-color: transparent;
-    display: block;
-    width: 200px;
-    height: 240px;
+.cart-icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    padding: 5px 5px 5px 5px;
+    background: linear-gradient(#C4B480, #dac992, #ebf8e1);
+    animation: breathing 5s linear infinite;
+    border-radius: 20px;
+    transform: translate(15px, -5px);
+
 }
-
-.movie-card-poster img {
-    width: 200px;
-    height: 240px;
-}
-
-.movie-card-details,
-.movie-card-poster {
-    position: absolute;
-}
-
-.movie-card-poster:hover+.movie-card-details {
-    display: block;
-} */
-
 
 .movie-gallery {
     padding-top: 5px;
