@@ -391,7 +391,42 @@ img.hover-shadow {
     animation: breathing 5s linear infinite;
     border-radius: 20px;
     transform: translate(15px, -5px);
+}
 
+.promotions-cart-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    z-index: 10;
+    display: flex;
+}
+
+.promotions-cart-text {
+    cursor: pointer;
+    height: 30px;
+    padding: 5px 12px 5px 18px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+    font-weight: bold;
+    background: linear-gradient(#C4B480, #dac992, #ebf8e1);
+    transform: translate(0px, 0px);
+}
+
+.promotions-cart-icon {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    padding: 5px 7px 5px 5px;
+    background: linear-gradient(#C4B480, #dac992, #ebf8e1);
+    animation: breathing 5s linear infinite;
+    border-radius: 20px;
+    z-index: 51;
+    transform: translate(15px, -5px);
 }
 
 .movie-gallery {

@@ -54,13 +54,13 @@
 <body style="margin:0px;">
 
     <body style="margin: 0px;">
-        <div class="cart-button" onclick="window.location.href='ViewCart.php'">
-            <div class="cart-icon"><img src="assets/cart.png"
-                    style="align-items: center; vertical-align: middle; justify-content: center;" width="90%"></div>
-            <button class="cart-text">View Cart</button>
+        <div class="promotions-cart-button" onclick="window.location.href='ViewCart.php'">
+            <div class="promotions-cart-icon"><img src="assets/cart.png"
+                    style="align-items: center; vertical-align: middle; justify-content: center;" width="100%"></div>
+            <button class="promotions-cart-text">View Cart</button>
         </div>
 
-        <!-- MAIN BODY CONTAINER --> -->
+        <!-- MAIN BODY CONTAINER -->
         <div id="container">
 
             <!-- ! custom make own navbar -->
