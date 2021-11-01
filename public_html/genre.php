@@ -147,7 +147,7 @@
 		</div>
 
 
-		<div id="content-section" style="min-height: 230px;">
+		<div id="content-section">
 
 			<?php
             $genre = $_GET['genre'];

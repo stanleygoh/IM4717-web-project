@@ -285,10 +285,10 @@ img.hover-shadow {
 /** end of carousel */
 
 #content-section {
+    min-height: 230px;
     margin: 0 10%;
     padding: 30px 0 50px 0px;
     color: #C4B480;
-    min-height: 50px;
     font-family: 'Franklin Gothic Medium',
         'Arial Narrow',
         Arial,
