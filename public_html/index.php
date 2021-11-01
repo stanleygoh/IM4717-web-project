@@ -52,7 +52,13 @@
     ?>
 
 <body style="margin: 0px;">
-    <!-- MAIN BODY CONTAINER -->
+    <div class="cart-button" onclick="window.location.href='ViewCart.php'">
+        <div class="cart-icon"><img src="assets/cart.png"
+                style="align-items: center; vertical-align: middle; justify-content: center;" width="90%"></div>
+        <button class="cart-text">View Cart</button>
+    </div>
+
+    <!-- MAIN BODY CONTAINER --> -->
     <div id="container">
 
         <!-- ! custom make own navbar -->
@@ -70,8 +76,6 @@
                     <img class="logo-img" src="./assets/logo.png" width="10%"
                         onclick="window.location.href='index.php'">
                 </ul>
-
-                <button onclick="window.location.href='ViewCart.php'">Cart</button>
             </div>
             <!-- Red Search bar Section -->
             <div id="search-bar-section">
