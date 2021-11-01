@@ -75,7 +75,6 @@ if (isset($_GET['empty'])) {
                          echo "It is already been booked! Please try again.";
                          session_unset();
                          session_destroy();                  
-                         exit();
                      }
                      else{
                             

@@ -43,7 +43,7 @@
 		<button class="cart-text">View Cart</button>
 	</div>
 
-        <!-- MAIN BODY CONTAINER -->
+        <!-- MAIN BODY CONTAINER --> -->
 	<div id="container">
 
 		<!-- ! custom make own navbar -->
@@ -189,8 +189,8 @@
              echo"</tr>";
             }}
             else{
+				echo"</table>";
                 echo"No match found";
-                exit();
             }        
             echo"</table>";
             $db->close();

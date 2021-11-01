@@ -60,7 +60,7 @@
             <button class="cart-text">View Cart</button>
         </div>
 
-        <!-- MAIN BODY CONTAINER -->
+        <!-- MAIN BODY CONTAINER --> -->
 		<div id="container">
 
 			<!-- ! custom make own navbar -->
@@ -219,11 +219,9 @@
 				$date2 = new DateTime($row["Date"]);
 				$date1[] = $date2->format('Y-m-d');
 
-				}}
-				else{
-				echo"No match found";
-				exit();
-				}
+				}}else{
+					echo"No match found!";
+					}
 
 				echo "<h3>Showtimes</h3>";
 
@@ -246,6 +244,11 @@
 						echo"<td>".$time1."</td>";
 						echo"</tr>";
 					}}
+					else{
+						echo"
+				</table>";
+						echo"No match found!";
+						}
 					echo"
 				</table>";
 				$count=0;

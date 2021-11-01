@@ -83,7 +83,6 @@
     }}
     else{
       echo "No match found!";
-      exit;
     }
     echo "<h2>Movie Title: ".$movie2[0]."</h2>";
     echo "<h2>Threatre ".$threater[0]."</h2>";
@@ -100,7 +99,9 @@
     if ($avail ->num_rows >0){
     while ($row = $avail->fetch_assoc()){
         $avail1[] = $row["availability"];
-    }}
+    }}  else{
+      echo "No match found!";
+    }
     $db->close();
     ?>
 <form method="post" action="" id ="seatForm">

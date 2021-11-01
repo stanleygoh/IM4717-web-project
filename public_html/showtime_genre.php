@@ -30,7 +30,6 @@
 	}}
 	else{
         echo"No match found";
-        exit();
     }
 		echo $genre1;
 		echo "<table border ='1'>
@@ -50,6 +49,7 @@
 		echo"</tr>";
 		}}
 	else{
+		echo"</table>";
 		echo "No match found!";
 	}
 	echo"</table>";

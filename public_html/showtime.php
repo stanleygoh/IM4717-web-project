@@ -196,10 +196,7 @@
 	$date2 = new DateTime($row["Date"]);
 	$date1[] = $date2->format('Y-m-d');
 	}}
-	else{
-        echo"No match found";
-        exit();
-	}
+
 	echo "<h1>$movie2[0]</h1>";
 	echo "<h3>Showtimes on $date1[0]:</h3>";
 
@@ -221,17 +218,13 @@
 		echo"</tr>";
 		}}
 		else{
+			echo"</table>";
 			echo"No match found";
-			exit();
 		}
 		echo"</table>";
 		$count=0;
 	$db->close();
 	?>
-
-
-
-
 			</div>
 
 
