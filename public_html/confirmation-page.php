@@ -239,13 +239,17 @@ if (isset($_GET['empty'])) {
             foreach($seat as $seat1){
             $movie2 = "SELECT availability from Threater where theatreID = " .$id. " and theatreDate = '".$date."' and theatreTime = '".$time."' and seats = '".$seat1."';";
             $movie2 = $db->query($movie2);
+            //Validation check for duplicate bookings
             if ($movie2 ->num_rows >0){
                 while ($row = $movie2->fetch_assoc()){
                     $avail = $row["availability"];
                      if($avail == 1){
-                         echo "It is already been booked! Please try again.";
                          session_unset();
-                         session_destroy();                  
+                         session_destroy(); 
+                         echo "<script>
+                         alert('Your selection is no longer available! Please try again.');
+                         window.location.href='index.php';
+                         </script>";                 
                      }
                      else{
                             
