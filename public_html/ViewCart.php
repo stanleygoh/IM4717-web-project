@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php  
 session_start();
 if (!isset($_SESSION['cart'])){
@@ -12,6 +10,7 @@ if (isset($_GET['empty'])) {
 	exit();
 }
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -236,8 +235,8 @@ if (isset($_GET['empty'])) {
 $db->close();
 ?>
             <br>
-            <button href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Reset Cart</button>
-
+            <button><a style="color: black; text-decoration: none;"
+                  href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Reset Cart</a></button>
             <br>
             <br>
             <h3>Key in your details to proceed with transaction:</h3>
