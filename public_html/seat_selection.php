@@ -15,40 +15,138 @@
 <html lang="en">
 
 <head>
-	<title>Huat Zai</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css">
+   <!-- Required meta tags always come first -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link rel="stylesheet" href="style.php">
+   <!-- endbuild -->
+
+   <title>Huat Zai Ya Theatres</title>
 </head>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
-}
+<!-- <style>
+items moved to style.php
+</style> -->
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
+<body style="margin:0px;">
 
-.item1 {
-  grid-column-start: 1;
-  grid-column-end: 10;
-}
-.item2 {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-.item3 {
-  grid-column-start: 8;
-  grid-column-end: 10;
-}   
-</style>
-<body>
+      <div class="cart-button" onclick="window.location.href='ViewCart.php'">
+         <div class="cart-icon"><img src="assets/cart.png"
+               style="align-items: center; vertical-align: middle; justify-content: center;" width="90%"></div>
+         <button class="cart-text">View Cart</button>
+      </div>
+
+      <!-- MAIN BODY CONTAINER -->
+      <div id="container">
+
+         <!-- ! custom make own navbar -->
+         <div id="header">
+            <div id="navbar">
+               <ul class="top-navbar">
+                  <div class="navbar-links">
+                     <li style="margin-right: 0;"><button class="cta-button"
+                           onclick="location.href='now-showing.php'">NOW SHOWING</button>
+                     </li>
+                     <li><a href="coming-soon.php">COMING SOON</a></li>
+                     <li><a href="promotions.php">PROMOTIONS</a></li>
+                     <li><a href="index.php">HOME</a></li>
+                  </div>
+                  <img class="logo-img" src="./assets/logo.png" width="10%" onclick="window.location.href='index.php'">
+               </ul>
+
+
+            </div>
+            <!-- Red Search bar Section -->
+            <div id="search-bar-section">
+               <div id="search-bar">
+                  <form method="post" style="width: 100%; height: 100%; display: flex; justify-content: center;
+    align-items: center; vertical-align: middle;">
+                     <div class="search-bar-selection-container-1">
+                        <select name="movies" class="search-bar-selection-1" id="movies">
+                           <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Select a Movie</option>
+                           <option value="1"><?php echo $movieName[0]?></option>
+                           <option value="2"><?php echo $movieName[1]?></option>
+                           <option value="3"><?php echo $movieName[2]?></option>
+                           <option value="4"><?php echo $movieName[3]?></option>
+                           <option value="5"><?php echo $movieName[4]?></option>
+                           <option value="6"><?php echo $movieName[5]?></option>
+                        </select>
+                        <select name="genre" id="genre" class="search-bar-selection-1">
+                           <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Or select a Genre</option>
+                           <option value="1"><?php echo $moviegenre[0]?></option>
+                           <option value="2"><?php echo $moviegenre[1]?></option>
+                           <option value="3"><?php echo $moviegenre[2]?></option>
+                           <option value="4"><?php echo $moviegenre[3]?></option>
+                           <option value="5"><?php echo $moviegenre[4]?></option>
+                           <option value="6"><?php echo $moviegenre[5]?></option>
+                           <option value="7"><?php echo $moviegenre[6]?></option>
+                        </select>
+                     </div>
+                     <div class="search-bar-selection-container-2">
+                        <div style="display: inline-flex; flex-direction: column;">
+                           <label for=" date" class="search-bar-selection-label">Select
+                              a Date:</label>
+                           <input type="date" name="Date" id="Date" class="search-bar-selection-2">
+                        </div>
+
+                        <select name="time" id="time" class="search-bar-selection-2">
+                           <option value="" disabled selected>&nbsp;&nbsp;&nbsp;Select a Time</option>
+                           <option value="1">11.30</option>
+                           <option value="2">14.30</option>
+                           <option value="3">17.30</option>
+                           <option value="4">20.30</option>
+                        </select>
+                        <input type="reset" value="Search" class="search-bar-button" id="search" onclick="myFunction()">
+                        <img src="assets/search.png" width="4%"
+                           style="position: relative; transform: translate(-30px, -3px);">
+                     </div>
+                     <script type="text/javascript">
+                        function myFunction() {
+                           var m_index = document.getElementById("movies");
+                           var g_index = document.getElementById("genre");
+                           var t_index = document.getElementById("time");
+                           var d_index = document.getElementById("Date").value;
+                           //possible to amend for alert "No match found."
+                           if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index)))) && !(isNaN(
+                                 parseInt(t_index.value)))) {
+                              var m_index = parseInt(m_index.value);
+                              t_index = t_index.options[t_index.selectedIndex].text;
+                              location.href = "seat_selection.php?movie=" + m_index + "&date=" + d_index +
+                                 "&time=" + t_index;
+
+                           } else if (!(isNaN(parseInt(g_index.value))) && (!(isNaN(Date.parse(d_index))))) {
+                              var g_index = parseInt(g_index.value);
+                              location.href = "showtime_genre.php?genre=" + g_index + "&date=" + d_index;
+                           } else if (!(isNaN(parseInt(m_index.value))) && (!(isNaN(Date.parse(d_index))))) {
+                              var m_index = parseInt(m_index.value);
+                              location.href = "showtime.php?movie=" + m_index + "&date=" + d_index;
+                           } else if (!(isNaN(parseInt(m_index.value))) && ((isNaN(Date.parse(d_index)))) && (
+                                 isNaN(parseInt(t_index.value)))) {
+                              var m_index = parseInt(m_index.value);
+                              location.href = "movieDetails.php?movie=" + m_index;
+                           } else if (!(isNaN(parseInt(g_index.value))) && ((isNaN(Date.parse(d_index)))) && (
+                                 isNaN(parseInt(t_index.value)))) {
+                              var g_index = parseInt(g_index.value);
+                              location.href = "genre.php?genre=" + g_index;
+                           } else {
+                              alert("Invalid option please try again!");
+                              location.reload();
+                           }
+                        }
+                     </script>
+                     <script type="text/javascript" src="validation.js"></script>
+                  </form>
+               </div>
+            </div>
+         </div>
+
+         <div style="margin-bottom: 200px;">
+            <!-- SEPARATOR TO ALIGN HEADER -->
+         </div>
+
+
+         <!-- NOW SHOWING SECTION -->
+         <div id="content-section">
     <h1>Seat Selection</h1><br>
     <?php
       @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
@@ -84,12 +182,13 @@
     else{
       echo "No match found!";
     }
-    echo "<h2>Movie Title: ".$movie2[0]."</h2>";
-    echo "<h2>Threatre ".$threater[0]."</h2>";
-    echo "<h2>Date: ".$date1[0]."</h2>";
+    echo "<h3>Movie Title: ".$movie2[0]."</h3>";
+    echo "<h3>Theatre ".$threater[0]."</h3>";
+    echo "<h3>Date: ".$date1[0]."</h3>";
     $time5 = new DateTime($time);
     $time6 = $time5->format('H.i');
-    echo "<h2>Time: ".$time6."</h2>";
+    echo "<h3>Time: ".$time6."</h3>";
+    echo "<br><p>Please select your preferred seat(s), by clicking on the available seats below:";
     $avail1 = array();
     $avail2 = array();
     $date3 = array();
@@ -129,19 +228,19 @@
   <div class="grid-item"style="visibility: hidden;">5</div>
   <div class="grid-item"style="visibility: hidden;">6</div>  
   <?php if($avail1[0] == 1){
-      echo '<div class="grid-item" id="A1" style="background-color:red" >A1</div>';
+      echo '<div class="grid-item" id="A1" style="background-color:red;" >A1</div>';
   }else{
-    echo '<div class="grid-item" id="A1" onclick="selectA1()">A1</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="A1" onclick="selectA1()">A1</div>';
   }
   if($avail1[1] == 1){
-    echo '<div class="grid-item" id="A2" style="background-color:red" >A2</div>';
+    echo '<div class="grid-item" id="A2" style="background-color:red;" >A2</div>';
 }else{
-  echo '<div class="grid-item" id="A2" onclick="selectA2()">A2</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="A2" onclick="selectA2()">A2</div>';
 }
 if($avail1[2] == 1){
     echo '<div class="grid-item" id="A3" style="background-color:red" >A3</div>';
 }else{
-  echo '<div class="grid-item" id="A3" onclick="selectA3()">A3</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="A3" onclick="selectA3()">A3</div>';
 }
   ?> 
   <div class="grid-item"style="visibility: hidden;">2</div>
@@ -150,80 +249,80 @@ if($avail1[2] == 1){
   <?php if($avail1[3] == 1){
       echo '<div class="grid-item" id="B1" style="background-color:red" >B1</div>';
   }else{
-    echo '<div class="grid-item" id="B1" onclick="selectB1()">B1</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="B1" onclick="selectB1()">B1</div>';
   }
   if($avail1[4] == 1){
     echo '<div class="grid-item" id="B2" style="background-color:red" >B2</div>';
 }else{
-  echo '<div class="grid-item" id="B2" onclick="selectB2()">B2</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="B2" onclick="selectB2()">B2</div>';
 }
 ?>
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[5] == 1){
       echo '<div class="grid-item" id="B3" style="background-color:red" >B3</div>';
   }else{
-    echo '<div class="grid-item" id="B3" onclick="selectB3()">B3</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="B3" onclick="selectB3()">B3</div>';
   }
   if($avail1[6] == 1){
     echo '<div class="grid-item" id="B4" style="background-color:red" >B4</div>';
 }else{
-  echo '<div class="grid-item" id="B4" onclick="selectB4()">B4</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="B4" onclick="selectB4()">B4</div>';
 }
 if($avail1[7] == 1){
     echo '<div class="grid-item" id="B5" style="background-color:red" >B5</div>';
 }else{
-  echo '<div class="grid-item" id="B5" onclick="selectB5()">B5</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="B5" onclick="selectB5()">B5</div>';
 }
   ?>  
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[8] == 1){
       echo '<div class="grid-item" id="B6" style="background-color:red" >B6</div>';
   }else{
-    echo '<div class="grid-item" id="B6" onclick="selectB6()">B6</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="B6" onclick="selectB6()">B6</div>';
   }
   if($avail1[9] == 1){
         echo '<div class="grid-item" id="B7" style="background-color:red" >B7</div>';
     }else{
-    echo '<div class="grid-item" id="B7" onclick="selectB7()">B7</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="B7" onclick="selectB7()">B7</div>';
     }
     if($avail1[10] == 1){
         echo '<div class="grid-item" id="C1" style="background-color:red" >C1</div>';
     }else{
-    echo '<div class="grid-item" id="C1" onclick="selectC1()">C1</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="C1" onclick="selectC1()">C1</div>';
     }
     if($avail1[11] == 1){
         echo '<div class="grid-item" id="C2" style="background-color:red" >C2</div>';
     }else{
-    echo '<div class="grid-item" id="C2" onclick="selectC2()">C2</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="C2" onclick="selectC2()">C2</div>';
     }
   ?>   
   <div class="grid-item"style="visibility: hidden;">9</div>  
   <?php if($avail1[12] == 1){
       echo '<div class="grid-item" id="C3" style="background-color:red" >C3</div>';
   }else{
-    echo '<div class="grid-item" id="C3" onclick="selectC3()">C3</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="C3" onclick="selectC3()">C3</div>';
   }
   if($avail1[13] == 1){
     echo '<div class="grid-item" id="C4" style="background-color:red" >C4</div>';
 }else{
-  echo '<div class="grid-item" id="C4" onclick="selectC4()">C4</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="C4" onclick="selectC4()">C4</div>';
 }
 if($avail1[14] == 1){
     echo '<div class="grid-item" id="C5" style="background-color:red"  >C5</div>';
 }else{
-  echo '<div class="grid-item" id="C5" onclick="selectC5()">C5</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="C5" onclick="selectC5()">C5</div>';
 }
   ?>  
   <div class="grid-item"style="visibility: hidden;">9</div> 
   <?php if($avail1[15] == 1){
       echo '<div class="grid-item" id="C6" style="background-color:red" >C6</div>';
   }else{
-    echo '<div class="grid-item" id="C6" onclick="selectC6()">C6</div>';
+    echo '<div class="grid-item" style="cursor: pointer;" id="C6" onclick="selectC6()">C6</div>';
   }
   if($avail1[16] == 1){
     echo '<div class="grid-item" id="C7" style="background-color:red" >C7</div>';
 }else{
-  echo '<div class="grid-item" id="C7" onclick="selectC7()">C7</div>';
+  echo '<div class="grid-item" style="cursor: pointer;" id="C7" onclick="selectC7()">C7</div>';
 }
 ?> 
   <div class="grid-item"style="visibility: hidden;">6</div>  
@@ -234,16 +333,31 @@ if($avail1[14] == 1){
   <div class="grid-item"style="visibility: hidden;">7</div>
   <div class="item2">Entrance</div>
   <div class="item3">Exit</div> 
-            
 </div>
+
+    <h3 style="margin-left: 15%;">Legend:</h3>
+<div class="grid-container2">
+
+    <div style="display: flex; align-items: center;">
+      <div class="legend-square" style="background-color: #CCE6E6"></div>Available
+    </div>
+        <div style="display: flex;     align-items: center;">
+      <div class="legend-square" style="background-color: red"></div>Taken
+    </div>
+        <div style="display: flex;     align-items: center;">
+      <div class="legend-square" style="background-color: grey"></div>Your Selection
+    </div>
+</div>
+<div  style="margin: 0 auto;width: 80%;">
 <div>
-You have selected : <strong><p name='seatid' id='seatid'style="display:inline"></p></strong>
+You have selected the following seat(s): <strong><p name='seatid' id='seatid'style="display:inline"></p></strong>
 <script type = "text/javascript"  src = "seatselect.js" ></script> 
 <span style="float:right;">
 Total Cost : $<strong><p id='totalcost'style="display:inline">0</p></strong>
 </span>
 </div>
-<button type="button" onClick="onClickReset()">Reset</button>
+<br>
+<button type="button" onClick="onClickReset()">Reset selection</button>
 <input type="submit" value="Add to Cart" name="submit" id ="submit" style="float:right;"onclick="myFunction()"></button><br>
 <script type="text/javascript">
     function myFunction()
@@ -261,7 +375,58 @@ Total Cost : $<strong><p id='totalcost'style="display:inline">0</p></strong>
     </script>
 </form>
 <p>Your shopping cart contains <?php
-	echo count($_SESSION['cart']); ?> items.</p>
+  echo count($_SESSION['cart']); ?> items.</p>
+  </div>
 
-</body>
+ </div>
+         <footer id="footer">
+            <div style="display: flex;">
+               <img src=" assets/logo.png" height="120px">
+
+               <div style="width: 100%; display: flex;justify-content: space-evenly;">
+                  <div style="flex-direction: column;">
+                     <h4>
+                        About us
+                     </h4>
+                     <p style="width: 200px;">Started in 2021, we came into the industry to deliver your most
+                        beloved
+                        retro films.
+                     </p>
+                  </div>
+
+                  <div style="flex-direction: column;">
+                     <h4>
+                        Location
+                     </h4>
+                     <p>
+                        50 Nanyang Ave,<br>Singapore 639798
+                     </p>
+                  </div>
+                  <img src=" assets/location.jpg" height="120px" style="transform: translate(-40px,15px);">
+
+                  <div style="flex-direction: column;">
+                     <h4>
+                        Follow us
+                     </h4>
+                     <ul>
+                        <li>
+                           <a href="www.facebook.com">Facebook</a>
+                        </li>
+                        <li>
+                           <a href="www.twitter.com">Twitter</a>
+                        </li>
+                        <li>
+                           <a href="www.instagram.com">Instagram</a>
+                        </li>
+                     </ul>
+                  </div>
+
+               </div>
+            </div>
+            <p>© 2021 Huat Zai Ya Pte. Ltd. All Rights
+               Reserved 2021
+            </p>
+         </footer>
+      </div>
+
 </html>

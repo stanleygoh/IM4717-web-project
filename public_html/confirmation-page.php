@@ -69,7 +69,6 @@ if (isset($_GET['empty'])) {
 
 <body style="margin:0px;">
 
-   <body style="margin: 0px;">
       <div class="cart-button" onclick="window.location.href='ViewCart.php'">
          <div class="cart-icon"><img src="assets/cart.png"
                style="align-items: center; vertical-align: middle; justify-content: center;" width="90%"></div>
@@ -188,6 +187,7 @@ if (isset($_GET['empty'])) {
          <!-- NOW SHOWING SECTION -->
          <div id="content-section">
 <h1>Transaction Summary</h1>
+<br>
 <?php
       @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
       //check if connection to db is possible

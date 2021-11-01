@@ -482,3 +482,61 @@ img.hover-shadow {
 .movie-card:hover .movie-card-details {
     opacity: 1;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: teal;
+  color: black;
+  padding: 10px;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.grid-container2 {
+    display: flex;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: teal;
+  color: black;
+  padding: 10px;
+  width: 65%;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  justify-content: space-evenly;
+}
+
+.legend-square {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border: solid black 1px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  background-color: lightgray !important;
+  color: gray;
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.item2 {
+  background-color: lightgray !important;
+  color: gray;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.item3 {
+  background-color: lightgray !important;
+  color: gray;
+  grid-column-start: 8;
+  grid-column-end: 10;
+}   
