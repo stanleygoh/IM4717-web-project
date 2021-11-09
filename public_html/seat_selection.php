@@ -116,10 +116,10 @@ items moved to style.php
     $threater = $row["theatreID"];
     }}
     else{
-      echo "<script>
-      alert('No Match Found. Please refer to the movie's showtime.');
-      window.location.href='index.php';
-      </script>";
+      echo '<script>
+      alert("No Match Found. Please refer to the movie showtime.");
+      window.location.href="index.php";
+      </script>';
     }
     echo "<h3>Movie Title: ".$movie2[0]."</h3>";
     echo "<h3>Theatre ".$threater[0]."</h3>";
@@ -138,10 +138,10 @@ items moved to style.php
     while ($row = $avail->fetch_assoc()){
         $avail1[] = $row["availability"];
     }}  else{
-      echo "<script>
-      alert('No Match Found. Please refer to the movie's showtime.');
-      window.location.href='index.php';
-      </script>";
+      echo '<script>
+      alert("No Match Found. Please refer to the movie showtime.");
+      window.location.href="index.php";
+      </script>';
     }
     $db->close();
     ?>

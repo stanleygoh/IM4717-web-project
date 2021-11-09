@@ -246,10 +246,10 @@ if (isset($_GET['empty'])) {
                      if($avail == 1){
                          session_unset();
                          session_destroy(); 
-                         echo "<script>
-                         alert('Your selection is no longer available! Please try again.');
-                         window.location.href='index.php';
-                         </script>";                 
+                         echo '<script>
+                         alert("No Match Found. Please refer to the movie showtime.");
+                         window.location.href="index.php";
+                         </script>';                 
                      }
                      else{
                             
