@@ -2,16 +2,16 @@
 
 Greetings! This repository is to archive and document the school project for building a cinema web portal. 
 
-This project is for non-commercial usage only; it is not hosted online other than on this repository.
+This project is for non-commercial usage only.
 
+This project was compiled and submitted through Oracle VM.
 
 
 ## Description
 
 This is a web design and development project of a hypothetical cinema company.
 
-This website features an online booking system, structured upon an SQL database. 
-
+This website features an online booking system, structured upon an SQL database
 
 
 ## Authors
